@@ -11,7 +11,18 @@
             <TabItem Header="Karyawan">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Karyawan" HorizontalAlignment="Left" Height="202" Margin="10,187,0,0" VerticalAlignment="Top" Width="652"/>
-                    <DataGrid HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" VerticalAlignment="Top" Width="652"/>
+                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="145" Margin="11,37,0,0" VerticalAlignment="Top" Width="652" SelectionChanged="dgvKaryawan_SelectionCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Nama" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Department" Binding="{Binding Department}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="No. Telp" Binding="{Binding Telp}"/>
+                            <DataGridTextColumn Header="Jabatan" Binding="{Binding JobTitle}"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                            <DataGridTextColumn Header="Jumlah Anak" Binding="{Binding TotalChilds}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="121,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" Margin="121,239,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.125,0.318"/>
                     <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="121,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
@@ -29,8 +40,10 @@
                     <Label Content="Jumlah Anak" HorizontalAlignment="Left" Margin="358,239,0,0" VerticalAlignment="Top"/>
                     <Label Content="Password" HorizontalAlignment="Left" Margin="358,266,0,0" VerticalAlignment="Top"/>
                     <Button x:Name="btnSimpan" Content="Simpan" HorizontalAlignment="Left" Margin="26,350,0,0" VerticalAlignment="Top" Width="617" Click="btnSimpan_Click"/>
-                    <Button x:Name="btnUpdate" Content="Ubah" HorizontalAlignment="Left" Margin="358,295,0,0" VerticalAlignment="Top" Width="285"/>
+                    <Button x:Name="btnUpdate" Content="Ubah" HorizontalAlignment="Left" Margin="358,295,0,0" VerticalAlignment="Top" Width="285" Click="btnUpdate_Click"/>
                     <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="358,322,0,0" VerticalAlignment="Top" Width="285"/>
+                    <TextBox x:Name="txtIdKaryawan" HorizontalAlignment="Left" Height="23" Margin="586,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77"/>
+                    <Label Content="ID Karyawan" HorizontalAlignment="Left" Margin="510,9,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
