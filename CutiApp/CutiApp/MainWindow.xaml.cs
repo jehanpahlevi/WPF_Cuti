@@ -24,5 +24,10 @@ namespace CutiApp
         {
             InitializeComponent();
         }
+
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+           if(emailTxt == )
+        }
     }
 }

@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CutiApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LEAVE REQUEST" Height="250" Width="450">
     <Grid>
-        
+        <GroupBox x:Name="groupLogin" Header="Login Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="191" Width="414">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,7">
+                <Label Content="Email"></Label>
+                <TextBox x:Name="emailTxt" Margin="0,0,243,0"></TextBox>
+                <Label Content="Password"></Label>
+                <TextBox x:Name="priceTxt" Margin="0,0,243,0"></TextBox>
+                <Button Click="buttonLogin_Click" x:Name="buttonLogin" Content="LOGIN" Click="buttonAddToCart_Click" Margin="0,0,243,0"></Button>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>
