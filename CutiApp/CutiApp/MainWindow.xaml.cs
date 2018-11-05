@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CutiApp.MyModel;
 
 namespace CutiApp
 {
@@ -20,14 +21,40 @@ namespace CutiApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        MyContext context = new MyContext();
+        Employee employee = new Employee();
+        UserLog userlog = new UserLog();
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        #region Find Employee
+        public Employee getDataEmployee(string email)
+        {
+            return context.Employees.;
+        }
+        #endregion Find Employee
+
+        #region Button
+
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-           if(emailTxt == )
+            if(emailTxt.Text == "" || passTxt.ToString() == "")
+            {
+                MessageBox.Show("PLEASE, FILL EMAIL AND PASSWORD FIRST!!!!");
+            }
+            else
+            {
+
+                var dataEmployee = getDataEmployee(emailTxt.Text);
+                if (emailTxt.Text == dataEmployee.Email.ToString() && passTxt.ToString() == dataEmployee.Password.ToString())
+                {
+                    MessageBox.Show("SUKSES");
+                }
+            }
         }
+
+        #endregion Button
     }
 }
