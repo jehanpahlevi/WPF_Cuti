@@ -12,13 +12,9 @@
                 <Label Content="Email"></Label>
                 <TextBox x:Name="emailTxt" Margin="0,0,243,0"></TextBox>
                 <Label Content="Password"></Label>
-<<<<<<< HEAD
                 <TextBox x:Name="priceTxt" Margin="0,0,243,0"></TextBox>
-=======
                 <PasswordBox x:Name="passTxt" Margin="0,0,243,0" Height="17"/>
-                <Button Click="buttonLogin_Click" x:Name="buttonLogin" Content="LOGIN" Margin="0,0,243,0"/>
-
->>>>>>> 07e3f068baee380c8b037e6135dde2b244c5f584
+                    <Button Click="buttonLogin_Click" x:Name="buttonLogin" Content="LOGIN" Margin="0,0,243,0"/>
             </StackPanel>
         </GroupBox>
     </Grid>

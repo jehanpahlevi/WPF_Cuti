@@ -53,6 +53,7 @@ namespace CutiApp
             employee.Password = txtPassword.Text;
             employee.ThisYearBalance = 12;
             employee.LastYearBalance = 0;
+            employee.Level = cbLevel.Text;
             context.Employees.Add(employee);
             context.SaveChanges();
 
@@ -107,10 +108,11 @@ namespace CutiApp
             employee.JobTitle = txtJobTitle.Text;
             employee.Status = txtStatus.Text;
             employee.TotalChilds = Convert.ToInt16(txtJumlahAnak.Text);
+            employee.Level = cbLevel.Text;
             context.Entry(employee).State = EntityState.Modified;
             context.SaveChanges();
 
-            MessageBox.Show("Data Berhasil di Update!");
+            MessageBox.Show("Data Berhasil di update!");
             TampilDataKaryawan();
         }
     }

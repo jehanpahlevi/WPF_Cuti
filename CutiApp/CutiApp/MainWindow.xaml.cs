@@ -27,10 +27,8 @@ namespace CutiApp
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
-<<<<<<< HEAD
         //private void buttonLogin_Click(object sender, RoutedEventArgs e)
         //{
 
@@ -40,7 +38,7 @@ namespace CutiApp
         //{
         //   if(emailTxt == )
         //}
-=======
+
         
         #region Button
 
@@ -78,6 +76,5 @@ namespace CutiApp
         }
 
         #endregion Button
->>>>>>> 07e3f068baee380c8b037e6135dde2b244c5f584
     }
 }
