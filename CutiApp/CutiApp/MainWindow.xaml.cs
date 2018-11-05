@@ -23,11 +23,17 @@ namespace CutiApp
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
-        {
-           if(emailTxt == )
-        }
+        //private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+        //private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        //{
+        //   if(emailTxt == )
+        //}
     }
 }
