@@ -23,12 +23,14 @@ namespace CutiApp
     {
         MyContext context = new MyContext();
         Employee employee = new Employee();
-        Department department = new Department(); 
+        Department department = new Department();
+        Company company = new Company();
 
         public Master()
         {
             InitializeComponent();
             TampilDataKaryawan();
+            TampilDataCompany();
         }
 
         #region Karyawan
@@ -115,7 +117,7 @@ namespace CutiApp
                 txtJobTitle.Text = (dgvKaryawan.SelectedCells[5].Column.GetCellContent(tampil) as TextBlock).Text;
                 txtStatus.Text = (dgvKaryawan.SelectedCells[6].Column.GetCellContent(tampil) as TextBlock).Text;
                 txtJumlahAnak.Text = (dgvKaryawan.SelectedCells[7].Column.GetCellContent(tampil) as TextBlock).Text;
-                cbLevel.Text = employee.Level;
+                cbLevel.Text = (dgvKaryawan.SelectedCells[8].Column.GetCellContent(tampil) as TextBlock).Text;
             }
             else
             {
@@ -127,6 +129,70 @@ namespace CutiApp
                 txtJumlahAnak.Text = "";
             }
         }
+
+        #endregion
+
+        #region Company
+
+        public Company GetByIdCompany(int id)
+        {
+            return context.Companies.Find(id);
+        }
+
+        public void TampilDataCompany()
+        {
+            var getData = context.Companies.Where(x => x.IsDelete == false).ToList();
+            dgvCompany.ItemsSource = getData;
+        }
+
+        private void btnSaveCompany_Click(object sender, RoutedEventArgs e)
+        {
+            company.Name = txtNamaCompany.Text;
+            context.Companies.Add(company);
+            context.SaveChanges();
+
+            MessageBox.Show("Data berhasil disimpan!");
+            TampilDataCompany();
+        }
+
+        private void btnUpdateCompany_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdCompany.Text);
+            var company = GetByIdCompany(Id);
+            company.Name = txtNamaCompany.Text;
+            context.Entry(company).State = EntityState.Modified;
+            context.SaveChanges();
+
+            MessageBox.Show("Data Berhasil diupdate!");
+            TampilDataCompany();
+        }
+
+        private void btnDeleteCompany_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdCompany.Text);
+            var company = GetByIdCompany(Id);
+            company.IsDelete = true;
+            context.Entry(company).State = EntityState.Modified;
+            context.SaveChanges();
+
+            MessageBox.Show("Data Berhasil diupdate!");
+            TampilDataCompany();
+        }
+
+        private void dgvCompany_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object tampil = dgvCompany.SelectedItem;
+            if (tampil != null)
+            {
+                txtIdCompany.Text = (dgvCompany.SelectedCells[0].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtNamaCompany.Text = (dgvCompany.SelectedCells[1].Column.GetCellContent(tampil) as TextBlock).Text;
+            }
+            else
+            {
+                txtIdCompany.Text = "";
+                txtNamaCompany.Text = "";
+            }
+    }
 
         #endregion
 
