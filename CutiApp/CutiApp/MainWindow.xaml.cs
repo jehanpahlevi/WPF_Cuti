@@ -29,28 +29,38 @@ namespace CutiApp
             InitializeComponent();
         }
 
-        #region Find Employee
-        public Employee getDataEmployee(string email)
-        {
-            return context.Employees.;
-        }
-        #endregion Find Employee
-
+        
         #region Button
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if(emailTxt.Text == "" || passTxt.ToString() == "")
+            if (emailTxt.Text == "" || passTxt.ToString() == "")
             {
                 MessageBox.Show("PLEASE, FILL EMAIL AND PASSWORD FIRST!!!!");
             }
             else
             {
-
-                var dataEmployee = getDataEmployee(emailTxt.Text);
-                if (emailTxt.Text == dataEmployee.Email.ToString() && passTxt.ToString() == dataEmployee.Password.ToString())
+                var dataEmployee = context.Employees.Where(x => x.Email == emailTxt.Text).ToList();
+                foreach (var value in dataEmployee)
                 {
-                    MessageBox.Show("SUKSES");
+                    if (emailTxt.Text == value.Email || passTxt.ToString() == value.Password)
+                    {
+                        if (value.Level == "karyawan")
+                        {
+                            MessageBox.Show("Anda Masuk Sebagai Karyawan "+value.Name);
+                        }
+                        else if(value.Level == "admin")
+                        {
+                            MessageBox.Show("Anda Masuk Sebagai Admin " + value.Name);
+                            Master master = new Master();
+                            master.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Anda Masuk Sebagai Manager " + value.Name);
+                        }
+                    }
                 }
             }
         }
