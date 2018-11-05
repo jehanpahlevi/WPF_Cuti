@@ -44,3 +44,6 @@ D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.g.cs
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.baml
 E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.g.cs
 E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.baml
+E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.g.cs
+E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.baml
+E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelDepart.resources

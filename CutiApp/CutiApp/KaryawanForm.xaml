@@ -1,0 +1,55 @@
+﻿<Window x:Class="CutiApp.KaryawanForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CutiApp"
+        mc:Ignorable="d"
+        Title="KaryawanForm" Height="487" Width="713">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="435" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
+            <TabItem Header="Histori Cuti">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652" SelectionChanged="dgvKaryawan_SelectionCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Submited By" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Request Date" Binding="{Binding Department}"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Email}"/>
+                            <DataGridTemplateColumn Header="Action">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="buttonCancelLeave" Click="buttonCancelLeave_Click">Cancel</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Leave Request">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+                    <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="23" Margin="120,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+
+                    <TextBox x:Name="txtJobTitle" HorizontalAlignment="Left" Height="23" Margin="120,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtCompany" HorizontalAlignment="Left" Height="23" Margin="120,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="439,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <Label Content="Nama" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Department" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="25,62,0,0" VerticalAlignment="Top"/>
+
+                    <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnSimpan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617" Click="btnSimpan_Click"/>
+                    <Button x:Name="btnUpdate" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139" Click="btnUpdate_Click"/>
+                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139" Click="btnDelete_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

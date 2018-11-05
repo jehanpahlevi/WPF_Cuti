@@ -9,7 +9,7 @@ namespace CutiApp.MyModel
     public class Department : BaseModel
     {
         public Company Companies { get; set; }
-        string Name { get; set; }
-        string ManagerId { get; set; }
+        public string Name { get; set; }
+        public string ManagerId { get; set; }
     }
 }
