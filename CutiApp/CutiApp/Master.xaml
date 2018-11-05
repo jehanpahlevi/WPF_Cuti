@@ -21,6 +21,7 @@
                             <DataGridTextColumn Header="Jabatan" Binding="{Binding JobTitle}"/>
                             <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                             <DataGridTextColumn Header="Jumlah Anak" Binding="{Binding TotalChilds}"/>
+                            <DataGridTextColumn Header="Level" Binding="{Binding Level}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="121,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
@@ -52,9 +53,42 @@
                     <Label Content="Level" HorizontalAlignment="Left" Margin="358,292,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="Department">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid HorizontalAlignment="Left" Height="233" Margin="10,10,0,0" VerticalAlignment="Top" Width="653"/>
+                    <GroupBox Header="Detil Department" HorizontalAlignment="Left" Height="119" Margin="10,274,0,0" VerticalAlignment="Top" Width="653"/>
+                    <DataGrid HorizontalAlignment="Left" Height="233" Margin="10,36,0,0" VerticalAlignment="Top" Width="653"/>
+                    <TextBox x:Name="txtIdDepartment" HorizontalAlignment="Left" Height="23" Margin="580,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
+                    <Label Content="ID Department" HorizontalAlignment="Left" Margin="487,8,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNamaDepartment" HorizontalAlignment="Left" Height="23" Margin="142,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+                    <ComboBox x:Name="cbCompany" HorizontalAlignment="Left" Margin="142,326,0,0" VerticalAlignment="Top" Width="272"/>
+                    <ComboBox x:Name="cbManager" HorizontalAlignment="Left" Margin="142,353,0,0" VerticalAlignment="Top" Width="272"/>
+                    <Label Content="Nama Department" HorizontalAlignment="Left" Margin="29,296,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Company" HorizontalAlignment="Left" Margin="29,324,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nama Manager" HorizontalAlignment="Left" Margin="29,351,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnSaveDept" Content="Save" HorizontalAlignment="Left" Margin="437,298,0,0" VerticalAlignment="Top" Width="206"/>
+                    <Button x:Name="btnUpdateDept" Content="Update" HorizontalAlignment="Left" Margin="437,326,0,0" VerticalAlignment="Top" Width="206"/>
+                    <Button x:Name="btnDeleteDept" Content="Delete" HorizontalAlignment="Left" Margin="437,353,0,0" VerticalAlignment="Top" Width="206"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Company">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Detil Company" HorizontalAlignment="Left" Height="95" Margin="10,298,0,0" VerticalAlignment="Top" Width="653"/>
+
+                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvCompany" HorizontalAlignment="Left" Height="255" Margin="10,38,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvCompany_SelectionCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Nama" Binding="{Binding Name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBox x:Name="txtIdCompany" HorizontalAlignment="Left" Height="23" Margin="587,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76"/>
+                    <Label Content="Id Company" HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNamaCompany" HorizontalAlignment="Left" Height="23" Margin="135,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
+                    <Label Content="Nama Company" HorizontalAlignment="Left" Margin="35,338,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnSaveCompany" Content="Save" HorizontalAlignment="Left" Margin="393,340,0,0" VerticalAlignment="Top" Width="79" Click="btnSaveCompany_Click"/>
+                    <Button x:Name="btnUpdateCompany" Content="Update" HorizontalAlignment="Left" Margin="478,340,0,0" VerticalAlignment="Top" Width="79" Click="btnUpdateCompany_Click"/>
+                    <Button x:Name="btnDeleteCompany" Content="Delete" HorizontalAlignment="Left" Margin="563,340,0,0" VerticalAlignment="Top" Width="79" Click="btnDeleteCompany_Click"/>
+
                 </Grid>
             </TabItem>
         </TabControl>
