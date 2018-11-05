@@ -8,7 +8,8 @@ namespace CutiApp.MyModel
 {
     public class Department : BaseModel
     {
-        string Nama { get; set; }
+        public Company Companies { get; set; }
+        string Name { get; set; }
         string ManagerId { get; set; }
     }
 }
