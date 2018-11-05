@@ -40,3 +40,5 @@ D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CoreCompileInputs.cache
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CopyComplete
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.exe
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.pdb
+D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.g.cs
+D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.baml
