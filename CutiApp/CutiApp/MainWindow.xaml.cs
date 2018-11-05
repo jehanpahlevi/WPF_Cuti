@@ -55,11 +55,11 @@ namespace CutiApp
                 {
                     if (emailTxt.Text == value.Email || passTxt.ToString() == value.Password)
                     {
-                        if (value.Level == "karyawan")
+                        if (value.Level == "Karyawan")
                         {
                             MessageBox.Show("Anda Masuk Sebagai Karyawan "+value.Name);
                         }
-                        else if(value.Level == "admin")
+                        else if(value.Level == "Admin")
                         {
                             MessageBox.Show("Anda Masuk Sebagai Admin " + value.Name);
                             Master master = new Master();

@@ -61,6 +61,40 @@ namespace CutiApp
             TampilDataKaryawan();
         }
 
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdKaryawan.Text);
+            var employee = GetByIdKaryawan(Id);
+            int Idd = Convert.ToInt16(cbDepartment.SelectedValue);
+            var depid = context.Departments.Find(Idd);
+            employee.Name = txtNama.Text;
+            employee.Departments = depid;
+            employee.Email = txtEmail.Text;
+            employee.Telp = txtNoTelp.Text;
+            employee.JobTitle = txtJobTitle.Text;
+            employee.Status = txtStatus.Text;
+            employee.TotalChilds = Convert.ToInt16(txtJumlahAnak.Text);
+            employee.Level = cbLevel.Text;
+            context.Entry(employee).State = EntityState.Modified;
+            context.SaveChanges();
+
+            MessageBox.Show("Data Berhasil diupdate!");
+            TampilDataKaryawan();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdKaryawan.Text);
+            var employee = GetByIdKaryawan(Id);
+            employee.IsDelete = true;
+            context.Entry(employee).State = EntityState.Modified;
+            context.SaveChanges();
+
+            MessageBox.Show("Data Berhasil dihapus!");
+            TampilDataKaryawan();
+        }
+
         public void TampilDataKaryawan()
         {
             var getData = context.Employees.Where(x => x.IsDelete == false).ToList();
@@ -81,6 +115,7 @@ namespace CutiApp
                 txtJobTitle.Text = (dgvKaryawan.SelectedCells[5].Column.GetCellContent(tampil) as TextBlock).Text;
                 txtStatus.Text = (dgvKaryawan.SelectedCells[6].Column.GetCellContent(tampil) as TextBlock).Text;
                 txtJumlahAnak.Text = (dgvKaryawan.SelectedCells[7].Column.GetCellContent(tampil) as TextBlock).Text;
+                cbLevel.Text = employee.Level;
             }
             else
             {
@@ -95,25 +130,5 @@ namespace CutiApp
 
         #endregion
 
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            int Id = Convert.ToInt16(txtIdKaryawan.Text);
-            var employee = GetByIdKaryawan(Id);
-            int Idd = Convert.ToInt16(cbDepartment.SelectedValue);
-            var depid = context.Departments.Find(Idd);
-            employee.Name = txtNama.Text;
-            employee.Departments = depid;
-            employee.Email = txtEmail.Text;
-            employee.Telp = txtNoTelp.Text;
-            employee.JobTitle = txtJobTitle.Text;
-            employee.Status = txtStatus.Text;
-            employee.TotalChilds = Convert.ToInt16(txtJumlahAnak.Text);
-            employee.Level = cbLevel.Text;
-            context.Entry(employee).State = EntityState.Modified;
-            context.SaveChanges();
-
-            MessageBox.Show("Data Berhasil di update!");
-            TampilDataKaryawan();
-        }
     }
 }

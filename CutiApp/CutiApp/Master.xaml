@@ -41,7 +41,7 @@
                     <Label Content="Password" HorizontalAlignment="Left" Margin="358,266,0,0" VerticalAlignment="Top"/>
                     <Button x:Name="btnSimpan" Content="Simpan" HorizontalAlignment="Left" Margin="26,350,0,0" VerticalAlignment="Top" Width="617" Click="btnSimpan_Click"/>
                     <Button x:Name="btnUpdate" Content="Ubah" HorizontalAlignment="Left" Margin="358,323,0,0" VerticalAlignment="Top" Width="139" Click="btnUpdate_Click"/>
-                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="502,323,0,0" VerticalAlignment="Top" Width="139"/>
+                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="502,323,0,0" VerticalAlignment="Top" Width="139" Click="btnDelete_Click"/>
                     <TextBox x:Name="txtIdKaryawan" HorizontalAlignment="Left" Height="23" Margin="586,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77"/>
                     <Label Content="ID Karyawan" HorizontalAlignment="Left" Margin="510,9,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="cbLevel" HorizontalAlignment="Left" Margin="440,294,0,0" VerticalAlignment="Top" Width="201">
