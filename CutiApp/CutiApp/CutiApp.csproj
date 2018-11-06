@@ -69,6 +69,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\201811060639539_addingModelManager.cs" />
+    <Compile Include="Migrations\201811060639539_addingModelManager.Designer.cs">
+      <DependentUpon>201811060639539_addingModelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811060719320_addingModelManager1.cs" />
+    <Compile Include="Migrations\201811060719320_addingModelManager1.Designer.cs">
+      <DependentUpon>201811060719320_addingModelManager1.cs</DependentUpon>
+    </Compile>
     <Page Include="KaryawanForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811060221183_addingModelManagerID.resx">
       <DependentUpon>201811060221183_addingModelManagerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811060639539_addingModelManager.resx">
+      <DependentUpon>201811060639539_addingModelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811060719320_addingModelManager1.resx">
+      <DependentUpon>201811060719320_addingModelManager1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

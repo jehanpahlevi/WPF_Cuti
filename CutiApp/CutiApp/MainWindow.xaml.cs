@@ -44,7 +44,7 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (emailTxt.Text == "" || passTxt.ToString() == "")
+            if (emailTxt.Text.Equals("") || passTxt.ToString() == "")
             {
                 MessageBox.Show("PLEASE, FILL EMAIL AND PASSWORD FIRST!!!!");
             }

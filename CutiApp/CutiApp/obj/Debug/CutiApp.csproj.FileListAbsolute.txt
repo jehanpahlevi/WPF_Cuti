@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe.config
 D:\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe
 D:\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.pdb
@@ -20,37 +19,11 @@ D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelAll.resource
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelAll1.resources
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelDepartment.resources
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelManagerID.resources
+D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelManager.resources
+D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelManager1.resources
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Properties.Resources.resources
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.GenerateResource.cache
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CoreCompileInputs.cache
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CopyComplete
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.exe
 D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.pdb
-D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csprojAssemblyReference.cache
-=======
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe.config
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.pdb
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.dll
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.SqlServer.dll
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.xml
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.SqlServer.xml
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csprojResolveAssemblyReference.cache
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.g.cs
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\MainWindow.g.cs
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.g.cs
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\App.g.cs
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp_MarkupCompile.cache
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp_MarkupCompile.lref
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.baml
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\MainWindow.baml
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.baml
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.g.resources
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelAll.resources
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelAll1.resources
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Migrations.addingModelDepartment.resources
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Properties.Resources.resources
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.GenerateResource.Cache
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.exe
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.pdb
->>>>>>> d4de9cfeb68bd4c8d40a56eb59415394449e0b82

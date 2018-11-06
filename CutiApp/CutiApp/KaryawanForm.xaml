@@ -10,10 +10,7 @@
         <TabControl HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
             <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
-<<<<<<< HEAD
-=======
                     <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
->>>>>>> d4de9cfeb68bd4c8d40a56eb59415394449e0b82
                     <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
@@ -29,7 +26,6 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-
                 </Grid>
             </TabItem>
             <TabItem Header="Leave Request">
@@ -49,11 +45,10 @@
                     <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
                     <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
-<<<<<<< HEAD
                     <Button x:Name="btnSimpanKaryawan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617"/>
                     <Button x:Name="btnUpdateKaryawan" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnDeleteKaryawan" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139"/>
-=======
+
                     <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,236,0,0" VerticalAlignment="Top" Width="652"/>
@@ -93,7 +88,7 @@
                     <Label x:Name="annualLeaveDayCalendar" Content="" HorizontalAlignment="Left" Margin="139,479,0,0" VerticalAlignment="Top" Width="44"/>
                     <Label Content="day(s)" HorizontalAlignment="Left" Margin="533,479,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="annualLeaveDayTotal" Content="" HorizontalAlignment="Left" Margin="452,479,0,0" VerticalAlignment="Top" Width="44"/>
->>>>>>> d4de9cfeb68bd4c8d40a56eb59415394449e0b82
+
                 </Grid>
             </TabItem>
         </TabControl>
