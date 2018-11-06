@@ -4,23 +4,17 @@
 winexe
 C#
 .cs
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\
+D:\WPF_Cuti\CutiApp\CutiApp\obj\Debug\
 CutiApp
 none
 false
 DEBUG;TRACE
-E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\App.xaml
+D:\WPF_Cuti\CutiApp\CutiApp\App.xaml
 3-309694781
 
-<<<<<<< HEAD
-22-29295716
-16616723211
-KaryawanForm.xaml;MainWindow.xaml;Master.xaml;
-=======
-212040318849
+242121649546
 16204927165
-MainWindow.xaml;Master.xaml;
->>>>>>> bbc02d874f8c8e2fc929045b61cd4e1f8c389bc1
+KaryawanForm.xaml;MainWindow.xaml;Master.xaml;
 
 False
 

@@ -10,6 +10,6 @@ namespace CutiApp.MyModel
     {
         public Company Companies { get; set; }
         public string Name { get; set; }
-        public string ManagerId { get; set; }
+        public int ManagerId { get; set; }
     }
 }
