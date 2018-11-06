@@ -3,7 +3,7 @@ namespace CutiApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addingModelManagerID : DbMigration
+    public partial class addingModelBaru : DbMigration
     {
         public override void Up()
         {

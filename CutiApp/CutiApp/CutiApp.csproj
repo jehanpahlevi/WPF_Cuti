@@ -105,13 +105,9 @@
     <Compile Include="Migrations\201811050252118_addingModelAll1.Designer.cs">
       <DependentUpon>201811050252118_addingModelAll1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811050848560_addingModelDepartment.cs" />
-    <Compile Include="Migrations\201811050848560_addingModelDepartment.Designer.cs">
-      <DependentUpon>201811050848560_addingModelDepartment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811060221183_addingModelManagerID.cs" />
-    <Compile Include="Migrations\201811060221183_addingModelManagerID.Designer.cs">
-      <DependentUpon>201811060221183_addingModelManagerID.cs</DependentUpon>
+    <Compile Include="Migrations\201811060457300_addingModelBaru.cs" />
+    <Compile Include="Migrations\201811060457300_addingModelBaru.Designer.cs">
+      <DependentUpon>201811060457300_addingModelBaru.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -141,11 +137,8 @@
     <EmbeddedResource Include="Migrations\201811050252118_addingModelAll1.resx">
       <DependentUpon>201811050252118_addingModelAll1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811050848560_addingModelDepartment.resx">
-      <DependentUpon>201811050848560_addingModelDepartment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811060221183_addingModelManagerID.resx">
-      <DependentUpon>201811060221183_addingModelManagerID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811060457300_addingModelBaru.resx">
+      <DependentUpon>201811060457300_addingModelBaru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

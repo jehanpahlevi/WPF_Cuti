@@ -7,13 +7,13 @@ namespace CutiApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addingModelDepartment : IMigrationMetadata
+    public sealed partial class addingModelBaru : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingModelDepartment));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addingModelBaru));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811050848560_addingModelDepartment"; }
+            get { return "201811060457300_addingModelBaru"; }
         }
         
         string IMigrationMetadata.Source
