@@ -53,7 +53,7 @@
                     <Label Content="Level" HorizontalAlignment="Left" Margin="358,292,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Department">
+            <TabItem Header="Department" Height="23" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Department" HorizontalAlignment="Left" Height="119" Margin="10,274,0,0" VerticalAlignment="Top" Width="653"/>
                     <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvDepartment" HorizontalAlignment="Left" Height="233" Margin="10,37,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvDepartment_SelectionCellsChanged">

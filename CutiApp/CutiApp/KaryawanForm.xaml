@@ -4,13 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CutiApp"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="KaryawanForm" Height="680.5" Width="713">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
             <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
+<<<<<<< HEAD
                     <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+=======
+
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+
+>>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
                     <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
@@ -45,14 +52,17 @@
                     <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
                     <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
+<<<<<<< HEAD
                     <Button x:Name="btnSimpanKaryawan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617"/>
                     <Button x:Name="btnUpdateKaryawan" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnDeleteKaryawan" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139"/>
+=======
+>>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
 
                     <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,236,0,0" VerticalAlignment="Top" Width="652"/>
-                    <DatePicker x:Name="datepickerTo" HorizontalAlignment="Left" Margin="346,290,0,0" VerticalAlignment="Top" Width="124"/>
+                    <DatePicker SelectedDateChanged="datepickerTo_SelectedDateChanged" x:Name="datepickerTo" HorizontalAlignment="Left" Margin="346,290,0,0" VerticalAlignment="Top" Width="124"/>
                     <DatePicker x:Name="datepickerFrom" HorizontalAlignment="Left" Margin="120,290,0,0" VerticalAlignment="Top" Width="124"/>
                     <TextBox x:Name="txtReason" HorizontalAlignment="Left" Height="57" Margin="138,421,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtThisYear" HorizontalAlignment="Left" Height="23" Margin="138,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>

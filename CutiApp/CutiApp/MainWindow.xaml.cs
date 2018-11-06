@@ -44,34 +44,55 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             if (emailTxt.Text.Equals("") || passTxt.ToString() == "")
+=======
+            if (emailTxt.Text == "")
+>>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
             {
-                MessageBox.Show("PLEASE, FILL EMAIL AND PASSWORD FIRST!!!!");
+                MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");
+            }
+            else if (passTxt.Password == "")
+            {
+                MessageBox.Show("PLEASE, FILL PASSWORD FIRST!!!!");
             }
             else
             {
-                var dataEmployee = context.Employees.Where(x => x.Email == emailTxt.Text).ToList();
-                foreach (var value in dataEmployee)
-                {
-                    if (emailTxt.Text == value.Email || passTxt.ToString() == value.Password)
+                var dataEmployee = context.Employees.Include("Departments").SingleOrDefault(x => x.Email == emailTxt.Text);
+                var getNameCompany = context.Departments.Include("Companies").SingleOrDefault(z => z.Name == dataEmployee.Departments.Name);
+                    if (emailTxt.Text == dataEmployee.Email && passTxt.Password == dataEmployee.Password)
                     {
-                        if (value.Level == "Karyawan")
+                        if (dataEmployee.Level == "Karyawan")
                         {
-                            MessageBox.Show("Anda Masuk Sebagai Karyawan "+value.Name);
+                            MessageBox.Show("Anda Masuk Sebagai Karyawan "+ dataEmployee.Name);
+                            KaryawanForm karyawan = new KaryawanForm();
+                            karyawan.txtNama.Text = dataEmployee.Name;
+                            karyawan.txtDepartment.Text = dataEmployee.Departments.Name;
+                            karyawan.txtCompany.Text = getNameCompany.Companies.Name;
+                            karyawan.txtEmail.Text = dataEmployee.Email;
+                            karyawan.txtJobTitle.Text = dataEmployee.JobTitle;
+                            karyawan.txtID.Text = dataEmployee.Id.ToString();
+                            karyawan.txtThisYear.Text = dataEmployee.ThisYearBalance.ToString();
+                            karyawan.Show();
+                            this.Close();
                         }
-                        else if(value.Level == "Admin")
+                        else if(dataEmployee.Level == "Admin")
                         {
-                            MessageBox.Show("Anda Masuk Sebagai Admin " + value.Name);
+                            MessageBox.Show("Anda Masuk Sebagai Admin " + dataEmployee.Name);
                             Master master = new Master();
                             master.Show();
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Anda Masuk Sebagai Manager " + value.Name);
+                            MessageBox.Show("Anda Masuk Sebagai Manager " + dataEmployee.Name);
                         }
                     }
-                }
+                    else
+                    {
+                        MessageBox.Show("Email atau Password Salah");
+                    }
+                
             }
         }
 
