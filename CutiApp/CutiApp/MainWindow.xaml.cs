@@ -44,20 +44,33 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (emailTxt.Text == "" || passTxt.ToString() == "")
+            if (emailTxt.Text == "")
             {
-                MessageBox.Show("PLEASE, FILL EMAIL AND PASSWORD FIRST!!!!");
+                MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");
+            }
+            else if (passTxt.Password == "")
+            {
+                MessageBox.Show("PLEASE, FILL PASSWORD FIRST!!!!");
             }
             else
             {
                 var dataEmployee = context.Employees.Where(x => x.Email == emailTxt.Text).ToList();
                 foreach (var value in dataEmployee)
                 {
-                    if (emailTxt.Text == value.Email || passTxt.ToString() == value.Password)
+                    if (emailTxt.Text == value.Email && passTxt.Password == value.Password)
                     {
                         if (value.Level == "Karyawan")
                         {
                             MessageBox.Show("Anda Masuk Sebagai Karyawan "+value.Name);
+                            KaryawanForm karyawan = new KaryawanForm();
+                            karyawan.txtNama.Text = value.Name;
+                            //karyawan.txtDepartment.Text = value.Departments.ToString();
+                            karyawan.txtEmail.Text = value.Email;
+                            karyawan.txtJobTitle.Text = value.JobTitle;
+                            karyawan.txtID.Text = value.Id.ToString();
+                            karyawan.txtThisYear.Text = value.ThisYearBalance.ToString();
+                            karyawan.Show();
+                            this.Close();
                         }
                         else if(value.Level == "Admin")
                         {
@@ -70,6 +83,10 @@ namespace CutiApp
                         {
                             MessageBox.Show("Anda Masuk Sebagai Manager " + value.Name);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email atau Password Salah");
                     }
                 }
             }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CutiApp.MyModel;
 
 namespace CutiApp
 {
@@ -19,6 +20,8 @@ namespace CutiApp
     /// </summary>
     public partial class KaryawanForm : Window
     {
+        MyContext context = new MyContext();
+        Employee employee = new Employee();
         public KaryawanForm()
         {
             InitializeComponent();
@@ -29,5 +32,6 @@ namespace CutiApp
         {
 
         }
+        
     }
 }
