@@ -11,11 +11,11 @@
             <TabItem Header="Karyawan">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Karyawan" HorizontalAlignment="Left" Height="202" Margin="10,187,0,0" VerticalAlignment="Top" Width="652"/>
-                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="145" Margin="11,37,0,0" VerticalAlignment="Top" Width="652" SelectionChanged="dgvKaryawan_SelectionCellsChanged">
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="145" Margin="11,37,0,0" VerticalAlignment="Top" Width="652" SelectionChanged="dgvKaryawan_SelectionCellsChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Nama" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Department" Binding="{Binding Department}"/>
+                            <DataGridTextColumn Header="Department" Binding="{Binding Departments.Name}"/>
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
                             <DataGridTextColumn Header="No. Telp" Binding="{Binding Telp}"/>
                             <DataGridTextColumn Header="Jabatan" Binding="{Binding JobTitle}"/>
@@ -25,7 +25,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="121,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" Margin="121,239,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.125,0.318"/>
+                    <ComboBox ItemsSource="{Binding GetData}" SelectedValuePath="Id" DisplayMemberPath="Name" x:Name="cbDepartment" HorizontalAlignment="Left" Margin="121,239,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.125,0.318"/>
                     <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="121,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtNoTelp" HorizontalAlignment="Left" Height="23" Margin="121,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtJobTitle" HorizontalAlignment="Left" Height="23" Margin="121,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
@@ -56,26 +56,31 @@
             <TabItem Header="Department">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Department" HorizontalAlignment="Left" Height="119" Margin="10,274,0,0" VerticalAlignment="Top" Width="653"/>
-                    <DataGrid HorizontalAlignment="Left" Height="233" Margin="10,36,0,0" VerticalAlignment="Top" Width="653"/>
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvDepartment" HorizontalAlignment="Left" Height="233" Margin="10,36,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvDepartment_SelectionCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Nama Department" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Company" Binding="{Binding Companies.Name}"/>
+                            <DataGridTextColumn Header="Manager" Binding="{Binding Employees.Name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <TextBox x:Name="txtIdDepartment" HorizontalAlignment="Left" Height="23" Margin="580,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
                     <Label Content="ID Department" HorizontalAlignment="Left" Margin="487,8,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtNamaDepartment" HorizontalAlignment="Left" Height="23" Margin="142,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
-                    <ComboBox x:Name="cbCompany" HorizontalAlignment="Left" Margin="142,326,0,0" VerticalAlignment="Top" Width="272"/>
-                    <ComboBox x:Name="cbManager" HorizontalAlignment="Left" Margin="142,353,0,0" VerticalAlignment="Top" Width="272"/>
+                    <ComboBox ItemsSource="{Binding GetData}" SelectedValuePath="Id" DisplayMemberPath="Name" x:Name="cbCompany" HorizontalAlignment="Left" Margin="142,326,0,0" VerticalAlignment="Top" Width="272"/>
+                    <ComboBox ItemsSource="{Binding GetData}" SelectedValuePath="Id" DisplayMemberPath="Name" x:Name="cbManager" HorizontalAlignment="Left" Margin="142,353,0,0" VerticalAlignment="Top" Width="272"/>
                     <Label Content="Nama Department" HorizontalAlignment="Left" Margin="29,296,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="29,324,0,0" VerticalAlignment="Top"/>
                     <Label Content="Nama Manager" HorizontalAlignment="Left" Margin="29,351,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnSaveDept" Content="Save" HorizontalAlignment="Left" Margin="437,298,0,0" VerticalAlignment="Top" Width="206"/>
-                    <Button x:Name="btnUpdateDept" Content="Update" HorizontalAlignment="Left" Margin="437,326,0,0" VerticalAlignment="Top" Width="206"/>
-                    <Button x:Name="btnDeleteDept" Content="Delete" HorizontalAlignment="Left" Margin="437,353,0,0" VerticalAlignment="Top" Width="206"/>
-
+                    <Button x:Name="btnSaveDept" Content="Save" HorizontalAlignment="Left" Margin="437,298,0,0" VerticalAlignment="Top" Width="206" Click="btnSaveDept_Click"/>
+                    <Button x:Name="btnUpdateDept" Content="Update" HorizontalAlignment="Left" Margin="437,326,0,0" VerticalAlignment="Top" Width="206" Click="btnUpdateDept_Click"/>
+                    <Button x:Name="btnDeleteDept" Content="Delete" HorizontalAlignment="Left" Margin="437,353,0,0" VerticalAlignment="Top" Width="206" Click="btnDeleteDept_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Company">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Company" HorizontalAlignment="Left" Height="95" Margin="10,298,0,0" VerticalAlignment="Top" Width="653"/>
-
-                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvCompany" HorizontalAlignment="Left" Height="255" Margin="10,38,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvCompany_SelectionCellsChanged">
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvCompany" HorizontalAlignment="Left" Height="255" Margin="10,38,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvCompany_SelectionCellsChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Nama" Binding="{Binding Name}"/>
@@ -88,6 +93,28 @@
                     <Button x:Name="btnSaveCompany" Content="Save" HorizontalAlignment="Left" Margin="393,340,0,0" VerticalAlignment="Top" Width="79" Click="btnSaveCompany_Click"/>
                     <Button x:Name="btnUpdateCompany" Content="Update" HorizontalAlignment="Left" Margin="478,340,0,0" VerticalAlignment="Top" Width="79" Click="btnUpdateCompany_Click"/>
                     <Button x:Name="btnDeleteCompany" Content="Delete" HorizontalAlignment="Left" Margin="563,340,0,0" VerticalAlignment="Top" Width="79" Click="btnDeleteCompany_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Leave">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Leave Detail" HorizontalAlignment="Left" Height="95" Margin="10,298,0,0" VerticalAlignment="Top" Width="653"/>
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvLeave" HorizontalAlignment="Left" Height="255" Margin="10,38,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvLeave_SelectionCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Jenis Cuti" Binding="{Binding LeaveType}"/>
+                            <DataGridTextColumn Header="Lama Hari" Binding="{Binding LengthDays}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBox x:Name="txtIdLeave" HorizontalAlignment="Left" Height="23" Margin="587,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76"/>
+                    <Label Content="Leave Id" HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtJenisCuti" HorizontalAlignment="Left" Height="23" Margin="102,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+                    <TextBox x:Name="txtLamaHari" HorizontalAlignment="Left" Height="23" Margin="415,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+                    <Label Content="Leave Type" HorizontalAlignment="Left" Margin="28,318,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnSaveLeave" Content="Save" HorizontalAlignment="Left" Margin="28,351,0,0" VerticalAlignment="Top" Width="293" Click="btnSaveLeave_Click"/>
+                    <Button x:Name="btnUpdateLeave" Content="Update" HorizontalAlignment="Left" Margin="326,351,0,0" VerticalAlignment="Top" Width="151" Click="btnUpdateLeave_Click"/>
+                    <Button x:Name="btnDeleteLeave" Content="Delete" HorizontalAlignment="Left" Margin="482,351,0,0" VerticalAlignment="Top" Width="151" Click="btnDeleteLeave_Click"/>
+                    <Label Content="Lama Hari" HorizontalAlignment="Left" Margin="347,320,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
             </TabItem>

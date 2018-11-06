@@ -25,12 +25,39 @@ namespace CutiApp
         Employee employee = new Employee();
         Department department = new Department();
         Company company = new Company();
+        Leave leave = new Leave();
 
         public Master()
         {
             InitializeComponent();
             TampilDataKaryawan();
             TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
+        }
+
+        public void tampilcbcompany()
+        {
+            int Id = Convert.ToInt16(cbCompany.SelectedValue);
+            var getData = context.Companies.ToList();
+            cbCompany.ItemsSource = getData;
+        }
+
+        public void tampilcbmanager()
+        {
+            int Id = Convert.ToInt16(cbManager.SelectedValue);
+            var getData = context.Employees.Where(x => x.Level == "Manager").ToList();
+            cbManager.ItemsSource = getData;
+        }
+
+        public void tampilcbdepartment()
+        {
+            int id = Convert.ToInt16(cbDepartment.SelectedValue);
+            var getData = context.Departments.ToList();
+            cbDepartment.ItemsSource = getData;
         }
 
         #region Karyawan
@@ -175,7 +202,7 @@ namespace CutiApp
             context.Entry(company).State = EntityState.Modified;
             context.SaveChanges();
 
-            MessageBox.Show("Data Berhasil diupdate!");
+            MessageBox.Show("Data Berhasil dihapus!");
             TampilDataCompany();
         }
 
@@ -196,5 +223,153 @@ namespace CutiApp
 
         #endregion
 
+        #region Department
+
+        public Department GetByIdDepartment(int id)
+        {
+            return context.Departments.Find(id);
+        }
+
+        public void TampilDataDepartment()
+        {
+            try
+            {
+                var getData = context.Departments.Where(x => x.IsDelete == false).ToList();
+                dgvDepartment.ItemsSource = getData;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.StackTrace);
+            }
+            
+        }
+
+        private void btnSaveDept_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt16(cbCompany.SelectedValue);
+            var comp = context.Companies.Find(id);
+            int idm = Convert.ToInt16(cbManager.SelectedValue);
+            var mang = context.Employees.Find(idm);
+            department.Name = txtNamaDepartment.Text;
+            department.Companies = comp;
+            department.ManagerId = mang.Id;
+            context.Departments.Add(department);
+            context.SaveChanges();
+
+            MessageBox.Show("Data berhasil disimpan!");
+            TampilDataDepartment();
+        }
+
+        private void dgvDepartment_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object tampil = dgvDepartment.SelectedItem;
+            if (tampil != null)
+            {
+                txtIdDepartment.Text = (dgvDepartment.SelectedCells[0].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtNamaDepartment.Text = (dgvDepartment.SelectedCells[1].Column.GetCellContent(tampil) as TextBlock).Text;
+                cbCompany.Text = (dgvDepartment.SelectedCells[2].Column.GetCellContent(tampil) as TextBlock).Text;
+                cbManager.Text = (dgvDepartment.SelectedCells[3].Column.GetCellContent(tampil) as TextBlock).Text;
+            }
+            else
+            {
+                txtIdCompany.Text = "";
+                txtNamaCompany.Text = "";
+                cbCompany.Text = "";
+                cbManager.Text = "";
+            }
+        }
+
+        private void btnUpdateDept_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdDepartment.Text);
+            var department = GetByIdDepartment(Id);
+            int id = Convert.ToInt16(cbCompany.SelectedValue);
+            var comp = context.Companies.Find(id);
+            int idm = Convert.ToInt16(cbManager.SelectedValue);
+            var mang = context.Employees.Find(idm);
+            department.Name = txtNamaDepartment.Text;
+            department.Companies = comp;
+            department.ManagerId = mang.Id;
+
+            context.Entry(department).State = EntityState.Modified;
+            context.SaveChanges();
+            MessageBox.Show("Data berhasil diupdate!");
+        }
+
+        private void btnDeleteDept_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = Convert.ToInt16(txtIdDepartment.Text);
+            department.IsDelete = true;
+
+            context.Entry(department).State = EntityState.Modified;
+            context.SaveChanges();
+            MessageBox.Show("Data berhasil diupdate!");
+        }
+
+        #endregion
+
+        public Leave GetByIdLeave(int id)
+        {
+            return context.Leaves.Find(id);
+        }
+
+        public void TampilDataLeave()
+        {
+            var getData = context.Leaves.Where(x => x.IsDelete == false).ToList();
+            dgvLeave.ItemsSource = getData;
+        }
+
+        private void btnUpdateLeave_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt16(txtIdLeave.Text);
+            var leave = GetByIdLeave(id);
+            leave.LeaveType = txtJenisCuti.Text;
+            leave.LengthDays = Convert.ToInt16(txtLamaHari.Text);
+
+            context.Entry(leave).State = EntityState.Modified;
+            context.SaveChanges();
+            MessageBox.Show("Data berhasil diupdate!");
+            TampilDataLeave();
+        }
+
+        private void btnDeleteLeave_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt16(txtIdLeave.Text);
+            var leave = GetByIdLeave(id);
+            leave.IsDelete = true;
+
+            context.Entry(leave).State = EntityState.Modified;
+            context.SaveChanges();
+            MessageBox.Show("Data berhasil diupdate!");
+            TampilDataLeave();
+        }
+
+        private void btnSaveLeave_Click(object sender, RoutedEventArgs e)
+        {
+            leave.LeaveType = txtJenisCuti.Text;
+            leave.LengthDays = Convert.ToInt16(txtLamaHari.Text);
+
+            context.Leaves.Add(leave);
+            context.SaveChanges();
+            MessageBox.Show("Data berhasil disimpan!");
+            TampilDataLeave();
+        }
+
+        private void dgvLeave_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object tampil = dgvLeave.SelectedItem;
+            if (tampil != null)
+            {
+                txtIdLeave.Text = (dgvLeave.SelectedCells[0].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtJenisCuti.Text = (dgvLeave.SelectedCells[1].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtLamaHari.Text = (dgvLeave.SelectedCells[2].Column.GetCellContent(tampil) as TextBlock).Text;
+            }
+            else
+            {
+                txtIdLeave.Text = "";
+                txtJenisCuti.Text = "";
+                txtLamaHari.Text = "";
+            }
+        }
     }
 }
