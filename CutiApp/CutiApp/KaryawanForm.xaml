@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CutiApp"
         mc:Ignorable="d"
-        Title="KaryawanForm" Height="487" Width="713">
+        Title="KaryawanForm" Height="680.5" Width="713">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="435" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
-            <TabItem Header="Histori Cuti">
+        <TabControl HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
+            <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652" SelectionChanged="dgvKaryawan_SelectionCellsChanged">
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Submited By" Binding="{Binding Name}"/>
@@ -29,8 +30,8 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Leave Request">
-                <Grid Background="#FFE5E5E5">
-                    <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,4">
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
                     <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="23" Margin="120,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
@@ -45,9 +46,45 @@
                     <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
                     <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnSimpan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617" Click="btnSimpan_Click"/>
-                    <Button x:Name="btnUpdate" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139" Click="btnUpdate_Click"/>
-                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139" Click="btnDelete_Click"/>
+                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
+                    <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
+                    <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,236,0,0" VerticalAlignment="Top" Width="652"/>
+                    <DatePicker x:Name="datepickerTo" HorizontalAlignment="Left" Margin="346,290,0,0" VerticalAlignment="Top" Width="124"/>
+                    <DatePicker x:Name="datepickerFrom" HorizontalAlignment="Left" Margin="120,290,0,0" VerticalAlignment="Top" Width="124"/>
+                    <TextBox x:Name="txtReason" HorizontalAlignment="Left" Height="57" Margin="138,421,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtThisYear" HorizontalAlignment="Left" Height="23" Margin="138,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>
+                    <TextBox x:Name="txtLastYear" HorizontalAlignment="Left" Height="23" Margin="452,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103"/>
+                    <Label Content="Annual Leave" HorizontalAlignment="Left" Margin="25,259,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Special Leave" HorizontalAlignment="Left" Margin="25,321,0,0" VerticalAlignment="Top"/>
+                    <Label Content="From" HorizontalAlignment="Left" Margin="25,290,0,0" VerticalAlignment="Top" Width="74"/>
+                    <Label Content="Reason And Notes" HorizontalAlignment="Left" Margin="25,418,0,0" VerticalAlignment="Top"/>
+                    <Label Content="This Year Balance" HorizontalAlignment="Left" Margin="25,393,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Last Year Balance" HorizontalAlignment="Left" Margin="346,391,0,0" VerticalAlignment="Top"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="201,259,0,0" VerticalAlignment="Top"/>
+                    <Label Content="To" HorizontalAlignment="Left" Margin="267,290,0,0" VerticalAlignment="Top" Width="74"/>
+                    <ComboBox x:Name="comboBoxSpecialDay" Margin="120,320,350,247">
+                        <ComboBoxItem Name="PernikahanKaryawan">Pernikahan Karyawan</ComboBoxItem>
+                        <ComboBoxItem Name="PernikahanAnakKaryawan">Pernikahan Anak Karyawan</ComboBoxItem>
+                        <ComboBoxItem Name="KhitananAnakKaryawan">Khitanan Anak Karyawan</ComboBoxItem>
+                        <ComboBoxItem Name="IstriKaryawanMelahirkan">Istri Karyawan Melahirkan</ComboBoxItem>
+                        <ComboBoxItem Name="SaudaraKandungKaryawanMeniggal">Saudara Kandung Karyawan Meniggal</ComboBoxItem>
+                        <ComboBoxItem Name="AnggotaSatuRumahMeninggal">Anggota Satu Rumah Meninggal</ComboBoxItem>
+                        <ComboBoxItem Name="IstriSuamiAnakMeninggal">Istri Suami Ana kMeninggal</ComboBoxItem>
+                        <ComboBoxItem Name="MenunaikanHaji">Menunaikan Haji</ComboBoxItem>
+                    </ComboBox>
+                    <Label x:Name="annualLeaveDay" Content="" HorizontalAlignment="Left" Margin="120,259,0,0" VerticalAlignment="Top" Width="44"/>
+                    <TextBox x:Name="specialLeaveDay" HorizontalAlignment="Left" Height="23" Margin="346,324,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="405,321,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="datepickerTo_Copy" HorizontalAlignment="Left" Margin="346,360,0,0" VerticalAlignment="Top" Width="124"/>
+                    <DatePicker x:Name="datepickerFrom_Copy" HorizontalAlignment="Left" Margin="120,360,0,0" VerticalAlignment="Top" Width="124"/>
+                    <Label Content="From" HorizontalAlignment="Left" Margin="25,360,0,0" VerticalAlignment="Top" Width="74"/>
+                    <Label Content="To" HorizontalAlignment="Left" Margin="267,360,0,0" VerticalAlignment="Top" Width="74"/>
+                    <Label Content="Days To Deduct" HorizontalAlignment="Left" Margin="25,479,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Annual Leave" HorizontalAlignment="Left" Margin="357,479,0,0" VerticalAlignment="Top"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="220,479,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="annualLeaveDayCalendar" Content="" HorizontalAlignment="Left" Margin="139,479,0,0" VerticalAlignment="Top" Width="44"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="533,479,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="annualLeaveDayTotal" Content="" HorizontalAlignment="Left" Margin="452,479,0,0" VerticalAlignment="Top" Width="44"/>
                 </Grid>
             </TabItem>
         </TabControl>
