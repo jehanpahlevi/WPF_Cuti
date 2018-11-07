@@ -358,6 +358,8 @@ namespace CutiApp
 
         #endregion
 
+        #region Leave
+
         public Leave GetByIdLeave(int id)
         {
             return context.Leaves.Find(id);
@@ -421,5 +423,7 @@ namespace CutiApp
                 txtLamaHari.Text = "";
             }
         }
+
+        #endregion
     }
 }

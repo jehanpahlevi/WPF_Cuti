@@ -44,11 +44,7 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            if (emailTxt.Text.Equals("") || passTxt.ToString() == "")
-=======
             if (emailTxt.Text == "")
->>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
             {
                 MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");
             }
@@ -86,6 +82,9 @@ namespace CutiApp
                         else
                         {
                             MessageBox.Show("Anda Masuk Sebagai Manager " + dataEmployee.Name);
+                            RMForm rmform = new RMForm();
+                            rmform.Show();
+                            this.Close();
                         }
                     }
                     else

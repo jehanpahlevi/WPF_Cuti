@@ -77,6 +77,9 @@
     <Compile Include="Migrations\201811060719320_addingModelManager1.Designer.cs">
       <DependentUpon>201811060719320_addingModelManager1.cs</DependentUpon>
     </Compile>
+    <Compile Include="RMForm.xaml.cs">
+      <DependentUpon>RMForm.xaml</DependentUpon>
+    </Compile>
     <Page Include="KaryawanForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Master.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RMForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

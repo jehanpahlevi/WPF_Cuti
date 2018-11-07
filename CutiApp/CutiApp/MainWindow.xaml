@@ -10,7 +10,7 @@
         <GroupBox x:Name="groupLogin" Header="Login Page" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="191" Width="414">
             <StackPanel Orientation="Vertical" Margin="0,0,0,7">
                 <Label Content="Email"></Label>
-                <TextBox x:Name="emailTxt" Margin="0,0,243,0"></TextBox>
+                <TextBox x:Name="emailTxt" Margin="0,0,243,0"/>
                 <Label Content="Password"></Label>
                 <PasswordBox x:Name="passTxt" Margin="0,0,243,0" Height="25"/>
                 <Button Click="buttonLogin_Click" x:Name="buttonLogin" Content="LOGIN" Margin="0,0,243,0"/>

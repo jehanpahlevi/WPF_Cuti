@@ -11,13 +11,12 @@
         <TabControl HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
             <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
-<<<<<<< HEAD
-                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
-=======
 
                     <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
 
->>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
+
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+
                     <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
@@ -41,24 +40,18 @@
                     <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="23" Margin="120,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-
                     <TextBox x:Name="txtJobTitle" HorizontalAlignment="Left" Height="23" Margin="120,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtCompany" HorizontalAlignment="Left" Height="23" Margin="120,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="439,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <Label Content="Nama" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top"/>
                     <Label Content="Department" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top"/>
                     <Label Content="Email" HorizontalAlignment="Left" Margin="25,62,0,0" VerticalAlignment="Top"/>
-
                     <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
                     <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
-<<<<<<< HEAD
                     <Button x:Name="btnSimpanKaryawan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617"/>
                     <Button x:Name="btnUpdateKaryawan" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnDeleteKaryawan" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139"/>
-=======
->>>>>>> 712e188b90e0fddf83c185eb035668b9bc89d7f7
-
                     <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,236,0,0" VerticalAlignment="Top" Width="652"/>
