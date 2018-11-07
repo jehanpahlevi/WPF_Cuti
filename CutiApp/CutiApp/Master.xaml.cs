@@ -88,6 +88,12 @@ namespace CutiApp
 
             MessageBox.Show("Data berhasil disimpan!");
             TampilDataKaryawan();
+            TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
 
@@ -110,6 +116,12 @@ namespace CutiApp
 
             MessageBox.Show("Data Berhasil diupdate!");
             TampilDataKaryawan();
+            TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -179,7 +191,13 @@ namespace CutiApp
             context.SaveChanges();
 
             MessageBox.Show("Data berhasil disimpan!");
+            TampilDataKaryawan();
             TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void btnUpdateCompany_Click(object sender, RoutedEventArgs e)
@@ -191,7 +209,13 @@ namespace CutiApp
             context.SaveChanges();
 
             MessageBox.Show("Data Berhasil diupdate!");
+            TampilDataKaryawan();
             TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void btnDeleteCompany_Click(object sender, RoutedEventArgs e)
@@ -203,7 +227,13 @@ namespace CutiApp
             context.SaveChanges();
 
             MessageBox.Show("Data Berhasil dihapus!");
+            TampilDataKaryawan();
             TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void dgvCompany_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
@@ -219,7 +249,7 @@ namespace CutiApp
                 txtIdCompany.Text = "";
                 txtNamaCompany.Text = "";
             }
-    }
+        }
 
         #endregion
 
@@ -241,7 +271,7 @@ namespace CutiApp
             {
                 Console.Write(ex.StackTrace);
             }
-            
+
         }
 
         private void btnSaveDept_Click(object sender, RoutedEventArgs e)
@@ -257,7 +287,13 @@ namespace CutiApp
             context.SaveChanges();
 
             MessageBox.Show("Data berhasil disimpan!");
+            TampilDataKaryawan();
+            TampilDataCompany();
             TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void dgvDepartment_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
@@ -294,6 +330,13 @@ namespace CutiApp
             context.Entry(department).State = EntityState.Modified;
             context.SaveChanges();
             MessageBox.Show("Data berhasil diupdate!");
+            TampilDataKaryawan();
+            TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         private void btnDeleteDept_Click(object sender, RoutedEventArgs e)
@@ -304,6 +347,13 @@ namespace CutiApp
             context.Entry(department).State = EntityState.Modified;
             context.SaveChanges();
             MessageBox.Show("Data berhasil diupdate!");
+            TampilDataKaryawan();
+            TampilDataCompany();
+            TampilDataDepartment();
+            TampilDataLeave();
+            tampilcbcompany();
+            tampilcbmanager();
+            tampilcbdepartment();
         }
 
         #endregion

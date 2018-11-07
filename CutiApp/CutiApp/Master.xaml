@@ -56,12 +56,12 @@
             <TabItem Header="Department" Height="23" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox Header="Detil Department" HorizontalAlignment="Left" Height="119" Margin="10,274,0,0" VerticalAlignment="Top" Width="653"/>
-                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvDepartment" HorizontalAlignment="Left" Height="233" Margin="10,36,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvDepartment_SelectionCellsChanged">
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvDepartment" HorizontalAlignment="Left" Height="233" Margin="10,37,0,0" VerticalAlignment="Top" Width="653" SelectionChanged="dgvDepartment_SelectionCellsChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Nama Department" Binding="{Binding Name}"/>
                             <DataGridTextColumn Header="Company" Binding="{Binding Companies.Name}"/>
-                            <DataGridTextColumn Header="Manager" Binding="{Binding Employees.Name}"/>
+                            <DataGridTextColumn Header="Manager ID" Binding="{Binding ManagerId}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <TextBox x:Name="txtIdDepartment" HorizontalAlignment="Left" Height="23" Margin="580,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
