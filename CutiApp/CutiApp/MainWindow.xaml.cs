@@ -44,6 +44,17 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+            var dataEmployee = context.Employees.Include("Departments").SingleOrDefault(x => x.Email == emailTxt.Text);
+=======
+<<<<<<< HEAD
+            if (emailTxt.Text.Equals("") || passTxt.ToString() == "")
+=======
+>>>>>>> 4638aa192b5c9e94c6b3a07503f5e7f8140f208e
+>>>>>>> d2a0ce5a1349f6e4a91423eb90f240e18b761bf4
             if (emailTxt.Text == "")
             {
                 MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");
@@ -54,13 +65,12 @@ namespace CutiApp
             }
             else
             {
-                var dataEmployee = context.Employees.Include("Departments").SingleOrDefault(x => x.Email == emailTxt.Text);
-                var getNameCompany = context.Departments.Include("Companies").SingleOrDefault(z => z.Name == dataEmployee.Departments.Name);
                     if (emailTxt.Text == dataEmployee.Email && passTxt.Password == dataEmployee.Password)
                     {
                         if (dataEmployee.Level == "Karyawan")
                         {
-                            MessageBox.Show("Anda Masuk Sebagai Karyawan "+ dataEmployee.Name);
+                        var getNameCompany = context.Departments.Include("Companies").SingleOrDefault(z => z.Name == dataEmployee.Departments.Name);
+                        MessageBox.Show("Anda Masuk Sebagai Karyawan "+ dataEmployee.Name);
                             KaryawanForm karyawan = new KaryawanForm();
                             karyawan.txtNama.Text = dataEmployee.Name;
                             karyawan.txtDepartment.Text = dataEmployee.Departments.Name;
@@ -69,12 +79,14 @@ namespace CutiApp
                             karyawan.txtJobTitle.Text = dataEmployee.JobTitle;
                             karyawan.txtID.Text = dataEmployee.Id.ToString();
                             karyawan.txtThisYear.Text = dataEmployee.ThisYearBalance.ToString();
+                            karyawan.txtLastYear.Text = dataEmployee.LastYearBalance.ToString();
                             karyawan.Show();
                             this.Close();
                         }
                         else if(dataEmployee.Level == "Admin")
                         {
-                            MessageBox.Show("Anda Masuk Sebagai Admin " + dataEmployee.Name);
+                        
+                        MessageBox.Show("Anda Masuk Sebagai Admin " + dataEmployee.Name);
                             Master master = new Master();
                             master.Show();
                             this.Close();
