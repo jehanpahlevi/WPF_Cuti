@@ -15,6 +15,10 @@ namespace CutiApp.MyModel
         public int TotalDays { get; set; }
         public string Backup { get; set; }
         public string Note { get; set; }
-        public string Status { get; set; } 
+        public string Status { get; set; }
+        public int ThisYearBefore { get; set; }
+        public int ThisYearAfter { get; set; }
+        public int LastYearBefore { get; set; }
+        public int LastYearAfter { get; set; }
     }
 }

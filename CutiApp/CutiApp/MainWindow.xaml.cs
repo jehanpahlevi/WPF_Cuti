@@ -44,17 +44,17 @@ namespace CutiApp
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+
+
 
             var dataEmployee = context.Employees.Include("Departments").SingleOrDefault(x => x.Email == emailTxt.Text);
-=======
-<<<<<<< HEAD
-            if (emailTxt.Text.Equals("") || passTxt.ToString() == "")
-=======
->>>>>>> 4638aa192b5c9e94c6b3a07503f5e7f8140f208e
->>>>>>> d2a0ce5a1349f6e4a91423eb90f240e18b761bf4
+
+
+            
+
+
+
             if (emailTxt.Text == "")
             {
                 MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");

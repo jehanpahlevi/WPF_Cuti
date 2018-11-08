@@ -69,14 +69,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201811060639539_addingModelManager.cs" />
-    <Compile Include="Migrations\201811060639539_addingModelManager.Designer.cs">
-      <DependentUpon>201811060639539_addingModelManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811060719320_addingModelManager1.cs" />
-    <Compile Include="Migrations\201811060719320_addingModelManager1.Designer.cs">
-      <DependentUpon>201811060719320_addingModelManager1.cs</DependentUpon>
-    </Compile>
     <Compile Include="RMForm.xaml.cs">
       <DependentUpon>RMForm.xaml</DependentUpon>
     </Compile>
@@ -112,26 +104,6 @@
     <Compile Include="Master.xaml.cs">
       <DependentUpon>Master.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811050236185_addingModelAll.cs" />
-    <Compile Include="Migrations\201811050236185_addingModelAll.Designer.cs">
-      <DependentUpon>201811050236185_addingModelAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811050252118_addingModelAll1.cs" />
-    <Compile Include="Migrations\201811050252118_addingModelAll1.Designer.cs">
-      <DependentUpon>201811050252118_addingModelAll1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811060457300_addingModelBaru.cs" />
-    <Compile Include="Migrations\201811060457300_addingModelBaru.Designer.cs">
-      <DependentUpon>201811060457300_addingModelBaru.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811070415417_addingModelDate.cs" />
-    <Compile Include="Migrations\201811070415417_addingModelDate.Designer.cs">
-      <DependentUpon>201811070415417_addingModelDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811070639421_addingModelDateTime.cs" />
-    <Compile Include="Migrations\201811070639421_addingModelDateTime.Designer.cs">
-      <DependentUpon>201811070639421_addingModelDateTime.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="MyModel\BaseModel.cs" />
@@ -154,29 +126,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201811050236185_addingModelAll.resx">
-      <DependentUpon>201811050236185_addingModelAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811050252118_addingModelAll1.resx">
-      <DependentUpon>201811050252118_addingModelAll1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811060457300_addingModelBaru.resx">
-      <DependentUpon>201811060457300_addingModelBaru.cs</DependentUpon>
-    </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201811070415417_addingModelDate.resx">
-      <DependentUpon>201811070415417_addingModelDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811070639421_addingModelDateTime.resx">
-      <DependentUpon>201811070639421_addingModelDateTime.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201811060639539_addingModelManager.resx">
-      <DependentUpon>201811060639539_addingModelManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811060719320_addingModelManager1.resx">
-      <DependentUpon>201811060719320_addingModelManager1.cs</DependentUpon>
->>>>>>> 4638aa192b5c9e94c6b3a07503f5e7f8140f208e
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

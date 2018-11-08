@@ -50,9 +50,6 @@
                     <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
                     <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
                     <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnSimpanKaryawan" Content="Simpan" HorizontalAlignment="Left" Margin="25,177,0,0" VerticalAlignment="Top" Width="617"/>
-                    <Button x:Name="btnUpdateKaryawan" Content="Ubah" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" Width="139"/>
-                    <Button x:Name="btnDeleteKaryawan" Content="Hapus" HorizontalAlignment="Left" Margin="501,150,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <Button Click="btnSubmit_Click" x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
                     <DatePicker SelectedDateChanged="datepickerTo_SelectedDateChanged" x:Name="datepickerTo" HorizontalAlignment="Left" Margin="346,290,0,0" VerticalAlignment="Top" Width="124"/>
