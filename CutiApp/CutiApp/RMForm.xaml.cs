@@ -21,8 +21,9 @@ namespace CutiApp
     /// </summary>
     public partial class RMForm : Window
     {
-        MyContext myContext = new MyContext();
-        EmployeeLeave employeeLeave = new EmployeeLeave(); 
+        MyContext context = new MyContext();
+        EmployeeLeave employeeLeave = new EmployeeLeave();
+        Employee employee = new Employee();
 
         public RMForm()
         {
@@ -32,38 +33,51 @@ namespace CutiApp
 
         public EmployeeLeave GetByIdEmployeeLeave(int id)
         {
-            return myContext.EmployeeLeaves.Find(id);
+            return context.EmployeeLeaves.Find(id);
         }
 
         public void TampilDataApprovalPage()
         {
             try
             {
-                var getData = myContext.EmployeeLeaves.Where(x => x.IsDelete == false).ToList();
+                var getData = context.EmployeeLeaves.Include("Employees").Where(x => x.Status == "Submitted").ToList();
                 dgvApprovalPage.ItemsSource = getData;
             }
             catch (Exception ex)
             {
-                Console.Write(ex.StackTrace);
+                Console.Write(ex.InnerException);
             }
         }
 
         private void btnAcceptLeave_Click(object sender, RoutedEventArgs e)
         {
-            int Id = Convert.ToInt16(txtIdHistory.Text);
-            var employeeleave = GetByIdEmployeeLeave(Id);
-            employeeLeave.Status = "Accepted";
-            myContext.Entry(employeeLeave).State = EntityState.Modified;
-            myContext.SaveChanges();
+            try
+            {
+                int Id = Convert.ToInt16(txtIdHistory.Text);
+                var employeeleave = GetByIdEmployeeLeave(Id);
+                employeeleave.Status = "Accepted";
+                context.Entry(employeeleave).State = EntityState.Modified;
+                context.SaveChanges();
+
+                MessageBox.Show("Cuti disetujui.");
+                TampilDataApprovalPage();
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.InnerException);
+            }
         }
 
         private void btnRejectLeave_Click(object sender, RoutedEventArgs e)
         {
             int Id = Convert.ToInt16(txtIdHistory.Text);
             var employeeleave = GetByIdEmployeeLeave(Id);
-            employeeLeave.Status = "Rejected";
-            myContext.Entry(employeeLeave).State = EntityState.Modified;
-            myContext.SaveChanges();
+            employeeleave.Status = "Rejected";
+            context.Entry(employeeleave).State = EntityState.Modified;
+            context.SaveChanges();
+
+            MessageBox.Show("Cuti ditolak.");
+            TampilDataApprovalPage();
         }
 
         private void dgvApprovalPage_SelectionCellsChanged(object sender, SelectionChangedEventArgs e)
@@ -71,14 +85,17 @@ namespace CutiApp
             object tampil = dgvApprovalPage.SelectedItem;
             if (tampil != null)
             {
-                txtSubmittedBy.Text = (dgvApprovalPage.SelectedCells[0].Column.GetCellContent(tampil) as TextBlock).Text;
-                txtLeaveStatus.Text = (dgvApprovalPage.SelectedCells[2].Column.GetCellContent(tampil) as TextBlock).Text;
-                txtRequestedDate.Text = (dgvApprovalPage.SelectedCells[1].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtIdHistory.Text = (dgvApprovalPage.SelectedCells[0].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtSubmittedBy.Text = (dgvApprovalPage.SelectedCells[1].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtRequestedDate.Text = (dgvApprovalPage.SelectedCells[2].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtNote.Text = (dgvApprovalPage.SelectedCells[4].Column.GetCellContent(tampil) as TextBlock).Text;
+                txtTotalDays.Text = (dgvApprovalPage.SelectedCells[3].Column.GetCellContent(tampil) as TextBlock).Text;
             }
             else
             {
+                txtIdHistory.Text = "";
                 txtSubmittedBy.Text = "";
-                txtLeaveStatus.Text = "";
+                txtNote.Text = "";
                 txtRequestedDate.Text = "";
             }
         }

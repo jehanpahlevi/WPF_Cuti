@@ -39,22 +39,13 @@ namespace CutiApp
         //   if(emailTxt == )
         //}
 
-        
+
         #region Button
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
 
-
-
-
             var dataEmployee = context.Employees.Include("Departments").SingleOrDefault(x => x.Email == emailTxt.Text);
-
-
-            
-
-
-
             if (emailTxt.Text == "")
             {
                 MessageBox.Show("PLEASE, FILL EMAIL FIRST!!!!");
@@ -65,45 +56,51 @@ namespace CutiApp
             }
             else
             {
-                    if (emailTxt.Text == dataEmployee.Email && passTxt.Password == dataEmployee.Password)
+                if (emailTxt.Text == dataEmployee.Email && passTxt.Password == dataEmployee.Password)
+                {
+                    if (dataEmployee.Level == "Karyawan")
                     {
-                        if (dataEmployee.Level == "Karyawan")
-                        {
                         var getNameCompany = context.Departments.Include("Companies").SingleOrDefault(z => z.Name == dataEmployee.Departments.Name);
-                        MessageBox.Show("Anda Masuk Sebagai Karyawan "+ dataEmployee.Name);
-                            KaryawanForm karyawan = new KaryawanForm();
-                            karyawan.txtNama.Text = dataEmployee.Name;
-                            karyawan.txtDepartment.Text = dataEmployee.Departments.Name;
-                            karyawan.txtCompany.Text = getNameCompany.Companies.Name;
-                            karyawan.txtEmail.Text = dataEmployee.Email;
-                            karyawan.txtJobTitle.Text = dataEmployee.JobTitle;
-                            karyawan.txtID.Text = dataEmployee.Id.ToString();
-                            karyawan.txtThisYear.Text = dataEmployee.ThisYearBalance.ToString();
-                            karyawan.txtLastYear.Text = dataEmployee.LastYearBalance.ToString();
-                            karyawan.Show();
-                            this.Close();
-                        }
-                        else if(dataEmployee.Level == "Admin")
-                        {
-                        
+                        MessageBox.Show("Anda Masuk Sebagai Karyawan " + dataEmployee.Name);
+                        KaryawanForm karyawan = new KaryawanForm();
+                        karyawan.txtNama.Text = dataEmployee.Name;
+                        karyawan.txtDepartment.Text = dataEmployee.Departments.Name;
+                        karyawan.txtCompany.Text = getNameCompany.Companies.Name;
+                        karyawan.txtEmail.Text = dataEmployee.Email;
+                        karyawan.txtJobTitle.Text = dataEmployee.JobTitle;
+                        karyawan.txtID.Text = dataEmployee.Id.ToString();
+                        karyawan.txtThisYear.Text = dataEmployee.ThisYearBalance.ToString();
+                        karyawan.txtLastYear.Text = dataEmployee.LastYearBalance.ToString();
+                        karyawan.txtNama2.Text = dataEmployee.Name;
+                        karyawan.txtDepartment2.Text = dataEmployee.Departments.Name;
+                        karyawan.txtCompany2.Text = getNameCompany.Companies.Name;
+                        karyawan.txtEmail2.Text = dataEmployee.Email;
+                        karyawan.txtJobTitle2.Text = dataEmployee.JobTitle;
+                        karyawan.txtID2.Text = dataEmployee.Id.ToString();
+                        karyawan.Show();
+                        this.Close();
+                    }
+                    else if (dataEmployee.Level == "Admin")
+                    {
+
                         MessageBox.Show("Anda Masuk Sebagai Admin " + dataEmployee.Name);
-                            Master master = new Master();
-                            master.Show();
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Anda Masuk Sebagai Manager " + dataEmployee.Name);
-                            RMForm rmform = new RMForm();
-                            rmform.Show();
-                            this.Close();
-                        }
+                        Master master = new Master();
+                        master.Show();
+                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Email atau Password Salah");
+                        MessageBox.Show("Anda Masuk Sebagai Manager " + dataEmployee.Name);
+                        RMForm rmform = new RMForm();
+                        rmform.Show();
+                        this.Close();
                     }
-                
+                }
+                else
+                {
+                    MessageBox.Show("Email atau Password Salah");
+                }
+
             }
         }
 
