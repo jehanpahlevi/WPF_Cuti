@@ -22,3 +22,29 @@ E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiAp
 E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.GenerateResource.Cache
 E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.exe
 E:\C#\visual studio 2015\Projects\cuti\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.pdb
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe.config
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.exe
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\CutiApp.pdb
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.dll
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.xml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csprojAssemblyReference.cache
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.g.cs
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\MainWindow.g.cs
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.g.cs
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\RMForm.g.cs
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\App.g.cs
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp_MarkupCompile.cache
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp_MarkupCompile.lref
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\KaryawanForm.baml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\MainWindow.baml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\Master.baml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\RMForm.baml
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.g.resources
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.Properties.Resources.resources
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.GenerateResource.cache
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CoreCompileInputs.cache
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.csproj.CopyComplete
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.exe
+D:\WPFCUTI\WPF_Cuti\CutiApp\CutiApp\obj\Debug\CutiApp.pdb

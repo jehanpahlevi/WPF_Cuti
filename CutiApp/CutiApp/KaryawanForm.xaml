@@ -6,79 +6,98 @@
         xmlns:local="clr-namespace:CutiApp"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="KaryawanForm" Height="680.5" Width="713">
+        Title="KaryawanForm" Height="640.5" Width="712">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="683">
+        <TabControl HorizontalAlignment="Left" Height="590" Margin="10,10,0,0" VerticalAlignment="Top" Width="684">
             <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
-
-                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
-
-
-                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
-
-                    <DataGrid ItemsSource="{Binding Source=getData}" AutoGenerateColumns="False" x:Name="dgvKaryawan" HorizontalAlignment="Left" Height="344" Margin="11,37,0,0" VerticalAlignment="Top" Width="652">
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="178" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
+                    <TextBox x:Name="txtNama2" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtEmail2" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtDepartment2" HorizontalAlignment="Left" Height="23" Margin="120,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtJobTitle2" HorizontalAlignment="Left" Height="23" Margin="120,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtCompany2" HorizontalAlignment="Left" Height="23" Margin="120,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtID2" HorizontalAlignment="Left" Height="23" Margin="439,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <Label Content="Nama" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Department" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="25,66,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Company" HorizontalAlignment="Left" Margin="25,121,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
+                    <DataGrid ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvHistoryKaryawan" HorizontalAlignment="Left" Height="157" Margin="10,193,0,0" VerticalAlignment="Top" Width="654" SelectionChanged="dgvHistoryKaryawan_SelectionChanged">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Reference" Binding="{Binding Id}"/>
-                            <DataGridTextColumn Header="Submited By" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Request Date" Binding="{Binding Department}"/>
-                            <DataGridTextColumn Header="Status" Binding="{Binding Email}"/>
-                            <DataGridTemplateColumn Header="Action">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button x:Name="buttonCancelLeave" Click="buttonCancelLeave_Click">Cancel</Button>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Submitted By" Binding="{Binding Employees.Name}"/>
+                            <DataGridTextColumn Header="Requested Date" Binding="{Binding CreateDate}"/>
+                            <DataGridTextColumn Header="Total Days" Binding="{Binding TotalDays}"/>
+                            <DataGridTextColumn Header="Note" Binding="{Binding Note}"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <GroupBox Header="Detail History" HorizontalAlignment="Left" Height="193" Margin="10,355,0,0" VerticalAlignment="Top" Width="654">
+                        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="624" Click="btnCancel_Click"/>
+                    </GroupBox>
+                    <TextBox x:Name="txtSubmittedBy" HorizontalAlignment="Left" Height="23" Margin="122,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+                    <TextBox x:Name="txtRequestedDate" HorizontalAlignment="Left" Height="23" Margin="122,439,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+                    <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="439,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
+                    <TextBox x:Name="txtTotalDays" HorizontalAlignment="Left" Height="23" Margin="439,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+                    <Label Foreground="White" Content="Submitted By" HorizontalAlignment="Left" Margin="25,409,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="White" Content="Requested Date" HorizontalAlignment="Left" Margin="25,436,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="White" Content="Note" HorizontalAlignment="Left" Margin="398,383,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="White" Content="Total Days" HorizontalAlignment="Left" Margin="369,409,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtIdLeavesDetail" HorizontalAlignment="Left" Height="23" Margin="122,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Leave Request">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,4">
-                    <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,236,0,0" VerticalAlignment="Top" Width="652"/>
-                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="221" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
-                    <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="23" Margin="120,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtJobTitle" HorizontalAlignment="Left" Height="23" Margin="120,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtCompany" HorizontalAlignment="Left" Height="23" Margin="120,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="439,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
-                    <Label Content="Nama" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Department" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Email" HorizontalAlignment="Left" Margin="25,62,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Company" HorizontalAlignment="Left" Margin="25,124,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Employee ID" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="503,541,0,0" VerticalAlignment="Top" Width="139"/>
-                    <Button Click="btnSubmit_Click" x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="357,541,0,0" VerticalAlignment="Top" Width="139"/>
-                    <DatePicker SelectedDateChanged="datepickerTo_SelectedDateChanged" x:Name="datepickerTo" HorizontalAlignment="Left" Margin="346,290,0,0" VerticalAlignment="Top" Width="124"/>
-                    <DatePicker x:Name="datepickerFrom" HorizontalAlignment="Left" Margin="120,290,0,0" VerticalAlignment="Top" Width="124"/>
-                    <TextBox x:Name="txtReason" HorizontalAlignment="Left" Height="57" Margin="138,421,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203"/>
-                    <TextBox x:Name="txtThisYear" HorizontalAlignment="Left" Height="23" Margin="138,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101"/>
-                    <TextBox x:Name="txtLastYear" HorizontalAlignment="Left" Height="23" Margin="452,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103"/>
-                    <Label Content="Annual Leave" HorizontalAlignment="Left" Margin="25,259,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Special Leave" HorizontalAlignment="Left" Margin="25,321,0,0" VerticalAlignment="Top"/>
-                    <Label Content="From" HorizontalAlignment="Left" Margin="25,290,0,0" VerticalAlignment="Top" Width="74"/>
-                    <Label Content="Reason And Notes" HorizontalAlignment="Left" Margin="25,418,0,0" VerticalAlignment="Top"/>
-                    <Label Content="This Year Balance" HorizontalAlignment="Left" Margin="25,393,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Last Year Balance" HorizontalAlignment="Left" Margin="346,391,0,0" VerticalAlignment="Top"/>
-                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="201,259,0,0" VerticalAlignment="Top"/>
-                    <Label Content="To" HorizontalAlignment="Left" Margin="267,290,0,0" VerticalAlignment="Top" Width="74"/>
-                    <ComboBox SelectionChanged="comboBoxSpecialDay_SelectionChanged" ItemsSource="{Binding getData}" SelectedValuePath="Id" DisplayMemberPath="LeaveType" x:Name="comboBoxSpecialDay" Margin="120,320,350,247"/>
-                    <TextBox TextChanged="annualLeaveDay_TextChanged" x:Name="annualLeaveDay" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="120,259,0,0" VerticalAlignment="Top" Width="44" Text="0"/>
-                    <TextBox TextChanged="specialLeaveDay_TextChanged" x:Name="specialLeaveDay" HorizontalAlignment="Left" Height="23" Margin="346,324,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="54"/>
-                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="405,321,0,0" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="datepickerTo_Copy" HorizontalAlignment="Left" Margin="346,360,0,0" VerticalAlignment="Top" Width="124"/>
-                    <DatePicker SelectedDateChanged="datepickerFrom_Copy_SelectedDateChanged" x:Name="datepickerFrom_Copy" HorizontalAlignment="Left" Margin="120,360,0,0" VerticalAlignment="Top" Width="124"/>
-                    <Label Content="From" HorizontalAlignment="Left" Margin="25,360,0,0" VerticalAlignment="Top" Width="74"/>
-                    <Label Content="To" HorizontalAlignment="Left" Margin="267,360,0,0" VerticalAlignment="Top" Width="74"/>
-                    <Label Content="Days To Deduct" HorizontalAlignment="Left" Margin="25,479,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Holiday" HorizontalAlignment="Left" Margin="357,479,0,0" VerticalAlignment="Top"/>
-                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="220,479,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="annualLeaveDayCalendar" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="139,479,0,0" VerticalAlignment="Top" Width="44" Text="0"/>
-                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="533,479,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="annualLeaveDayTotal" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="452,479,0,0" VerticalAlignment="Top" Width="44" Text="0"/>
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="625*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Leave Request Form" HorizontalAlignment="Left" Height="348" Margin="11,195,0,0" VerticalAlignment="Top" Width="652" Grid.ColumnSpan="3"/>
+                    <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="178" Margin="11,10,0,0" VerticalAlignment="Top" Width="652" Grid.ColumnSpan="3"/>
+                    <TextBox x:Name="txtNama" HorizontalAlignment="Left" Height="23" Margin="70,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="70,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtDepartment" HorizontalAlignment="Left" Height="23" Margin="70,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtJobTitle" HorizontalAlignment="Left" Height="23" Margin="70,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtCompany" HorizontalAlignment="Left" Height="23" Margin="70,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="389,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <Label Content="Nama" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Department" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="25,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Job Title" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Company" HorizontalAlignment="Left" Margin="25,121,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Employee ID" HorizontalAlignment="Left" Margin="307,38,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Button x:Name="btnDelete" Content="Hapus" HorizontalAlignment="Left" Margin="453,500,0,0" VerticalAlignment="Top" Width="139" Grid.Column="2"/>
+                    <Button Click="btnSubmit_Click" x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="307,500,0,0" VerticalAlignment="Top" Width="139" Grid.Column="2"/>
+                    <DatePicker SelectedDateChanged="datepickerTo_SelectedDateChanged" x:Name="datepickerTo" HorizontalAlignment="Left" Margin="296,249,0,0" VerticalAlignment="Top" Width="124" Grid.Column="2"/>
+                    <DatePicker x:Name="datepickerFrom" HorizontalAlignment="Left" Margin="70,249,0,0" VerticalAlignment="Top" Width="124" Grid.Column="2"/>
+                    <TextBox x:Name="txtReason" HorizontalAlignment="Left" Height="57" Margin="88,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Grid.Column="2"/>
+                    <TextBox x:Name="txtThisYear" HorizontalAlignment="Left" Height="23" Margin="88,353,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101" Grid.Column="2"/>
+                    <TextBox x:Name="txtLastYear" HorizontalAlignment="Left" Height="23" Margin="402,353,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103" Grid.Column="2"/>
+                    <Label Content="Annual Leave" HorizontalAlignment="Left" Margin="25,218,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Special Leave" HorizontalAlignment="Left" Margin="25,280,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="From" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Width="74" Grid.ColumnSpan="3"/>
+                    <Label Content="Reason And Notes" HorizontalAlignment="Left" Margin="25,377,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="This Year Balance" HorizontalAlignment="Left" Margin="25,352,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Last Year Balance" HorizontalAlignment="Left" Margin="296,350,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="151,218,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="To" HorizontalAlignment="Left" Margin="217,249,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2"/>
+                    <TextBox TextChanged="annualLeaveDay_TextChanged" x:Name="annualLeaveDay" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="70,218,0,0" VerticalAlignment="Top" Width="44" Text="0" Grid.Column="2"/>
+                    <TextBox TextChanged="specialLeaveDay_TextChanged" x:Name="specialLeaveDay" HorizontalAlignment="Left" Height="23" Margin="296,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="54" Grid.Column="2"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="355,280,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <DatePicker x:Name="datepickerTo_Copy" HorizontalAlignment="Left" Margin="296,319,0,0" VerticalAlignment="Top" Width="124" Grid.Column="2"/>
+                    <DatePicker SelectedDateChanged="datepickerFrom_Copy_SelectedDateChanged" x:Name="datepickerFrom_Copy" HorizontalAlignment="Left" Margin="70,319,0,0" VerticalAlignment="Top" Width="124" Grid.Column="2"/>
+                    <Label Content="From" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="74" Grid.ColumnSpan="3"/>
+                    <Label Content="To" HorizontalAlignment="Left" Margin="217,319,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2"/>
+                    <Label Content="Days To Deduct" HorizontalAlignment="Left" Margin="25,438,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                    <Label Content="Holiday" HorizontalAlignment="Left" Margin="307,438,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="170,438,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="annualLeaveDayCalendar" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="89,438,0,0" VerticalAlignment="Top" Width="44" Text="0" Grid.Column="2"/>
+                    <Label Content="day(s)" HorizontalAlignment="Left" Margin="483,438,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <TextBox x:Name="annualLeaveDayTotal" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="402,438,0,0" VerticalAlignment="Top" Width="44" Text="0" Grid.Column="2"/>
+                    <ComboBox SelectionChanged="comboBoxSpecialDay_SelectionChanged" ItemsSource="{Binding getData}" SelectedValuePath="Id" DisplayMemberPath="LeaveType" x:Name="comboBoxSpecialDay" Margin="70,279,350,252" Grid.Column="2"/>
 
                 </Grid>
             </TabItem>

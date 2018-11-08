@@ -5,32 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CutiApp"
         mc:Ignorable="d"
-        Title="Relationship Manager Approval Page" Height="393" Width="639">
+        Title="Relationship Manager Approval Page" Height="422" Width="644">
     <Grid>
-        <Grid Background="Navy" HorizontalAlignment="Left" Height="342" Margin="10,10,0,0" VerticalAlignment="Top" Width="609">
+        <Grid Background="Navy" HorizontalAlignment="Left" Height="368" Margin="10,10,0,0" VerticalAlignment="Top" Width="609">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="151*"/>
                 <ColumnDefinition Width="52*"/>
             </Grid.ColumnDefinitions>
-            <GroupBox Foreground="White" Header="Leave Request Detail" HorizontalAlignment="Left" Height="100" Margin="10,232,0,0" VerticalAlignment="Top" Width="589" Grid.ColumnSpan="2"/>
+            <GroupBox Foreground="White" Header="Leave Request Detail" HorizontalAlignment="Left" Height="123" Margin="10,232,0,0" VerticalAlignment="Top" Width="589" Grid.ColumnSpan="2"/>
             <DataGrid Background="White" Foreground="Navy" ItemsSource="{Binding getData}" AutoGenerateColumns="False" x:Name="dgvApprovalPage" HorizontalAlignment="Left" Height="189" Margin="10,38,0,0" VerticalAlignment="Top" Width="589" Grid.ColumnSpan="2" SelectionChanged="dgvApprovalPage_SelectionCellsChanged">
                 <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Submitted By" Binding="{Binding Employees.Name}"/>
                     <DataGridTextColumn Header="Requested Date" Binding="{Binding CreateDate}"/>
+                    <DataGridTextColumn Header="Total Days" Binding="{Binding TotalDays}"/>
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}"/>
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBox x:Name="txtIdHistory" HorizontalAlignment="Left" Height="23" Margin="55,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="91" Grid.Column="1"/>
-            <TextBox x:Name="txtSubmittedBy" HorizontalAlignment="Left" Height="23" Margin="122,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201"/>
-            <TextBox x:Name="txtRequestedDate" HorizontalAlignment="Left" Height="23" Margin="122,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201"/>
-            <TextBox x:Name="txtLeaveStatus" HorizontalAlignment="Left" Height="23" Margin="382,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtSubmittedBy" HorizontalAlignment="Left" Height="23" Margin="122,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+            <TextBox x:Name="txtRequestedDate" HorizontalAlignment="Left" Height="23" Margin="122,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+            <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="387,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtTotalDays" HorizontalAlignment="Left" Height="23" Margin="122,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
             <Label Foreground="White" Content="Submitted By" HorizontalAlignment="Left" Margin="25,260,0,0" VerticalAlignment="Top"/>
             <Label Foreground="White" Content="Requested Date" HorizontalAlignment="Left" Margin="25,286,0,0" VerticalAlignment="Top"/>
-            <Label Foreground="White" Content="Status" HorizontalAlignment="Left" Margin="338,260,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnAcceptLeave" Content="Accept" HorizontalAlignment="Left" Margin="337,289,0,0" VerticalAlignment="Top" Width="121" Grid.ColumnSpan="2" Click="btnAcceptLeave_Click"/>
-            <Button x:Name="btnRejectLeave" Content="Reject" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="121" Grid.Column="1" Click="btnRejectLeave_Click"/>
+            <Label Foreground="White" Content="Note" HorizontalAlignment="Left" Margin="319,260,0,0" VerticalAlignment="Top"/>
+            <Label Foreground="White" Content="Total Days" HorizontalAlignment="Left" Margin="25,313,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnAcceptLeave" Content="Accept" HorizontalAlignment="Left" Margin="322,289,0,0" VerticalAlignment="Top" Width="252" Click="btnAcceptLeave_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnRejectLeave" Content="Reject" HorizontalAlignment="Left" Margin="322,317,0,0" VerticalAlignment="Top" Width="252" Click="btnRejectLeave_Click" Grid.ColumnSpan="2"/>
             <Label Foreground="White" Content="ID" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-            <Label FontStyle="Italic" FontSize="24" Foreground="White" Content="Leave Request Approval" HorizontalAlignment="Left" Margin="10,-4,0,0" VerticalAlignment="Top"/>
+            <Label FontStyle="Italic" FontSize="24" Foreground="Gold" Content="Leave Request Approval" HorizontalAlignment="Left" Margin="10,-4,0,0" VerticalAlignment="Top"/>
+            <Label FontStyle="Italic" FontSize="24" Foreground="White" Content="Leave Request Approval" HorizontalAlignment="Left" Margin="8,-5,0,0" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>
