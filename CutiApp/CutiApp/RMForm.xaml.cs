@@ -40,7 +40,7 @@ namespace CutiApp
         {
             try
             {
-                var getData = context.EmployeeLeaves.Include("Employees").Where(x => x.Status == "Submitted").ToList();
+                var getData = context.EmployeeLeaves.Include("Employees").Where(x => x.Status == "submit").ToList();
                 dgvApprovalPage.ItemsSource = getData;
             }
             catch (Exception ex)

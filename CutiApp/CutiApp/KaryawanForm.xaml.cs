@@ -34,7 +34,6 @@ namespace CutiApp
         {
             InitializeComponent();
             loadComboBoxSpecialDay();
-            TampilDataHistory();
         }
 
 
@@ -337,6 +336,11 @@ namespace CutiApp
             a[0] = thisyearhit;
             a[1] = lastyearhit;
             return a;
+        }
+
+        private void buttonRefreshHistory_Click(object sender, RoutedEventArgs e)
+        {
+            TampilDataHistory();
         }
 
 
