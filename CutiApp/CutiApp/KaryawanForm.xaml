@@ -11,6 +11,9 @@
         <TabControl HorizontalAlignment="Left" Height="590" Margin="10,10,0,0" VerticalAlignment="Top" Width="684">
             <TabItem Header="Leaves History">
                 <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Detail History" HorizontalAlignment="Left" Height="193" Margin="10,355,0,0" VerticalAlignment="Top" Width="654">
+                        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="624" Click="btnCancel_Click"/>
+                    </GroupBox>
                     <GroupBox Header="Employee Detail" HorizontalAlignment="Left" Height="178" Margin="11,10,0,0" VerticalAlignment="Top" Width="652"/>
                     <TextBox x:Name="txtNama2" HorizontalAlignment="Left" Height="23" Margin="120,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtEmail2" HorizontalAlignment="Left" Height="23" Margin="120,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
@@ -34,17 +37,14 @@
                             <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <GroupBox Header="Detail History" HorizontalAlignment="Left" Height="193" Margin="10,355,0,0" VerticalAlignment="Top" Width="654">
-                        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="624" Click="btnCancel_Click"/>
-                    </GroupBox>
                     <TextBox x:Name="txtSubmittedBy" HorizontalAlignment="Left" Height="23" Margin="122,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
                     <TextBox x:Name="txtRequestedDate" HorizontalAlignment="Left" Height="23" Margin="122,439,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
                     <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="439,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203"/>
                     <TextBox x:Name="txtTotalDays" HorizontalAlignment="Left" Height="23" Margin="439,411,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
-                    <Label Foreground="White" Content="Submitted By" HorizontalAlignment="Left" Margin="25,409,0,0" VerticalAlignment="Top"/>
-                    <Label Foreground="White" Content="Requested Date" HorizontalAlignment="Left" Margin="25,436,0,0" VerticalAlignment="Top"/>
-                    <Label Foreground="White" Content="Note" HorizontalAlignment="Left" Margin="398,383,0,0" VerticalAlignment="Top"/>
-                    <Label Foreground="White" Content="Total Days" HorizontalAlignment="Left" Margin="369,409,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Submitted By" HorizontalAlignment="Left" Margin="25,409,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Requested Date" HorizontalAlignment="Left" Margin="25,436,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Note" HorizontalAlignment="Left" Margin="398,383,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Total Days" HorizontalAlignment="Left" Margin="369,409,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtIdLeavesDetail" HorizontalAlignment="Left" Height="23" Margin="122,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
                 </Grid>
             </TabItem>

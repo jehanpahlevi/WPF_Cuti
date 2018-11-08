@@ -89,10 +89,9 @@ namespace CutiApp
             }
             else
             {
+                datepickerFrom_Copy.SelectedDate = Convert.ToDateTime(datepickerFrom.Text);
+                datepickerTo_Copy.SelectedDate = Convert.ToDateTime(datepickerFrom.Text);
                 specialLeaveDay.Text = "";
-                annualLeaveDay.Text = "";
-                annualLeaveDayCalendar.Text = "0";
-                annualLeaveDayTotal.Text = "0";
 
             }
         }
@@ -139,7 +138,7 @@ namespace CutiApp
                     {
                         start = dateSpecial;
                     }
-                    else if (dateAnnual != null && dateSpecial != null && dateAnnual < dateSpecial)
+                    else if (dateAnnual != null && dateSpecial != null && dateAnnual <= dateSpecial)
                     {
                         start = Convert.ToDateTime(dateAnnual);
                     }
@@ -164,48 +163,18 @@ namespace CutiApp
                         end = Convert.ToDateTime(endateSpecial);
                     }
 
-                    InsertCuti(start, end, totaldays, "Submitted", DateTimeOffset.Now.LocalDateTime);
+                    int lastbalance = Convert.ToInt16(txtLastYear.Text);
+                    int thisbalance = Convert.ToInt16(txtThisYear.Text);
 
-
-                    //int lastbalance = Convert.ToInt16(txtLastYear.Text);
-                    //int thisbalance = Convert.ToInt16(txtThisYear.Text);
-                    //var editbalance = GetById(Convert.ToInt16(txtID.Text));
-                    //if (editbalance != null)
-                    //{
-                    //    if (txtLastYear.Text == "0")
-                    //    {
-                    //        int totalhol = Convert.ToUInt16(annualLeaveDayCalendar.Text);
-                    //        hasilkurangthis = thisbalance - totalhol;
-                    //        employee.ThisYearBalance = hasilkurangthis;
-                    //    }
-                    //    else if (lastbalance > Convert.ToInt16(annualLeaveDayCalendar.Text))
-                    //    {
-                    //        hasilkuranglast = lastbalance - Convert.ToInt16(annualLeaveDayCalendar.Text);
-                    //        employee.LastYearBalance = hasilkuranglast;
-                    //    }
-                    //    else if (lastbalance < Convert.ToInt16(annualLeaveDayCalendar.Text))
-                    //    {
-                    //        int totalhol = Convert.ToUInt16(annualLeaveDayCalendar.Text);
-                    //        int nol = totalhol - lastbalance;
-                    //        int totalakhir = thisbalance - nol;
-                    //        employee.ThisYearBalance = totalakhir;
-                    //        employee.LastYearBalance = 0;
-                    //    }
-                    //    employee.UpdateDate = DateTimeOffset.Now.LocalDateTime;
-                    //    context.Entry(employee).State = EntityState.Modified;
-                    //    context.SaveChanges();
-                    //}
-
-<<<<<<< HEAD
                     Array tlbalance = thislastyear();
                     InsertCuti(start, end, deductdays,totaldays, "submit", DateTimeOffset.Now.LocalDateTime, thisbalance, Convert.ToInt16(tlbalance.GetValue(0)), lastbalance, Convert.ToInt16(tlbalance.GetValue(1)));
 
                     
                     //var dataEmp = GetById(Convert.ToInt16(txtID.Text));
                     //UpdateBalanceCuti(dataEmp,thisbalance,lastbalance,DateTimeOffset.Now.LocalDateTime);
-=======
 
->>>>>>> 122877606325deccfe99a52d2475c64ed8bd9e06
+
+
                     MessageBox.Show("Permohonan Cuti Berhasil Diajukan");
                     TampilDataHistory();
                 }
@@ -228,16 +197,13 @@ namespace CutiApp
             return context.Employees.Find(id);
         }
 
-<<<<<<< HEAD
+
         public EmployeeLeave GetByIdLeaves(int id)
         {
             return context.EmployeeLeaves.Find(id);
         }
 
         public void InsertCuti(DateTime? start, DateTime? end, int deductDays ,int totalDays, string status, DateTimeOffset createdate,int thisyearbf, int thisyearafter, int lastyaerbf, int lastyearafter)
-=======
-        public void InsertCuti(DateTime? start, DateTime? end, int totalDays, string status, DateTimeOffset createdate)
->>>>>>> 122877606325deccfe99a52d2475c64ed8bd9e06
         {
             employeeleave.StartDate = start;
             employeeleave.EndDate = end;
@@ -245,6 +211,10 @@ namespace CutiApp
             employeeleave.TotalDays = totalDays;
             employeeleave.Status = status;
             employeeleave.CreateDate = createdate;
+            employeeleave.ThisYearBefore = thisyearbf;
+            employeeleave.ThisYearAfter = thisyearafter;
+            employeeleave.LastYearBefore = lastyaerbf;
+            employeeleave.LastYearAfter = lastyearafter;
             int ID = Convert.ToInt16(txtID.Text);
             var getEmployee = context.Employees.Find(ID);
             employeeleave.Employees = getEmployee;
@@ -255,7 +225,9 @@ namespace CutiApp
             context.SaveChanges();
         }
 
-<<<<<<< HEAD
+        
+
+
         //public void UpdateBalanceCuti(Employee employee,int thisyear,int lastyear,DateTimeOffset updatedate)
         //{
         //    employee.ThisYearBalance = employeeleave.ThisYearAfter;
@@ -264,18 +236,19 @@ namespace CutiApp
         //    context.Entry(employee).State = EntityState.Modified;
         //    context.SaveChanges();
         //}
-=======
+
         public EmployeeLeave GetByIdEmployee(int id)
         {
             return context.EmployeeLeaves.Find(id);
         }
->>>>>>> 122877606325deccfe99a52d2475c64ed8bd9e06
+
 
         public void TampilDataHistory()
         {
             try
             {
-                var getData = context.EmployeeLeaves.Include("Employees").Where(x => x.IsDelete == false).ToList();
+                var id = Convert.ToInt16(txtID2.Text); 
+                var getData = context.EmployeeLeaves.Include("Employees").Where(x => x.Employees.Id == id).ToList();
                 dgvHistoryKaryawan.ItemsSource = getData;
             }
             catch (Exception ex)
@@ -314,6 +287,59 @@ namespace CutiApp
                 txtRequestedDate.Text = "";
             }
         }
+
+
+        public int[] thislastyear()
+        {
+            int lastbalance = Convert.ToInt16(txtLastYear.Text);
+            int thisbalance = Convert.ToInt16(txtThisYear.Text);
+
+            int idemp = Convert.ToInt16(txtID.Text);
+            var editbalance = GetById(idemp);
+            int thisyearhit = 0;
+            int lastyearhit = 0;
+            int[] a = new int[2];
+            if (editbalance != null)
+            {
+                int[] b = new int[2];
+                if (txtLastYear.Text == "0")
+                {
+                    int totalhol = Convert.ToInt16(annualLeaveDayCalendar.Text);
+                    hasilkurangthis = thisbalance - totalhol;
+                    thisyearhit = thisyearhit + hasilkurangthis;
+                    lastyearhit = lastyearhit;
+                    b[0] = thisyearhit;
+                    b[1] = lastyearhit;
+                    return b;
+                }
+                else if (lastbalance > Convert.ToInt16(annualLeaveDayCalendar.Text))
+                {
+                    hasilkuranglast = lastbalance - Convert.ToInt16(annualLeaveDayCalendar.Text);
+                    lastyearhit = lastyearhit + hasilkuranglast;
+                    thisyearhit = thisbalance;
+                    b[0] = thisyearhit;
+                    b[1] = lastyearhit;
+                    return b;
+                }
+                else if (lastbalance < Convert.ToInt16(annualLeaveDayCalendar.Text))
+                {
+                    int totalhol = Convert.ToInt16(annualLeaveDayCalendar.Text);
+                    int nol = totalhol - lastbalance;
+                    int totalakhir = thisbalance - nol;
+                    thisyearhit = totalakhir;
+                    lastyearhit = lastyearhit;
+                    b[0] = thisyearhit;
+                    b[1] = lastyearhit;
+                    return b;
+                }
+
+            }
+            a[0] = thisyearhit;
+            a[1] = lastyearhit;
+            return a;
+        }
+
+
         //public int loadThisLastBalance(int Id)
         //{
         //    var getThisLast = context.Employees.Find(Id);
