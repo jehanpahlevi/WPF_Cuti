@@ -129,6 +129,7 @@ namespace CutiApp
                     var dateSpecial = datepickerFrom_Copy.SelectedDate;
                     var endateAnnual = datepickerTo.SelectedDate;
                     var endateSpecial = datepickerTo_Copy.SelectedDate;
+                    int deductdays = Convert.ToInt16(annualLeaveDayCalendar.Text);
                     int totaldays = Convert.ToInt16(annualLeaveDayTotal.Text);
                     if (dateSpecial == null)
                     {
@@ -167,11 +168,11 @@ namespace CutiApp
                     int thisbalance = Convert.ToInt16(txtThisYear.Text);
 
                     Array tlbalance = thislastyear();
-                    InsertCuti(start, end, totaldays, "submit", DateTimeOffset.Now.LocalDateTime, thisbalance, Convert.ToInt16(tlbalance.GetValue(0)), lastbalance, Convert.ToInt16(tlbalance.GetValue(1)));
+                    InsertCuti(start, end, deductdays,totaldays, "submit", DateTimeOffset.Now.LocalDateTime, thisbalance, Convert.ToInt16(tlbalance.GetValue(0)), lastbalance, Convert.ToInt16(tlbalance.GetValue(1)));
 
                     
-                    var dataEmp = GetById(Convert.ToInt16(txtID.Text));
-                    UpdateBalanceCuti(dataEmp,thisbalance,lastbalance,DateTimeOffset.Now.LocalDateTime);
+                    //var dataEmp = GetById(Convert.ToInt16(txtID.Text));
+                    //UpdateBalanceCuti(dataEmp,thisbalance,lastbalance,DateTimeOffset.Now.LocalDateTime);
                     MessageBox.Show("Permohonan Cuti Berhasil Diajukan");
                         
                     
@@ -201,10 +202,11 @@ namespace CutiApp
             return context.EmployeeLeaves.Find(id);
         }
 
-        public void InsertCuti(DateTime? start, DateTime? end, int totalDays, string status, DateTimeOffset createdate,int thisyearbf, int thisyearafter, int lastyaerbf, int lastyearafter)
+        public void InsertCuti(DateTime? start, DateTime? end, int deductDays ,int totalDays, string status, DateTimeOffset createdate,int thisyearbf, int thisyearafter, int lastyaerbf, int lastyearafter)
         {
             employeeleave.StartDate = start;
             employeeleave.EndDate = end;
+            employeeleave.DeductDays = deductDays;
             employeeleave.TotalDays = totalDays;
             employeeleave.Status = status;
             employeeleave.CreateDate = createdate;
@@ -223,14 +225,14 @@ namespace CutiApp
             
         }
 
-        public void UpdateBalanceCuti(Employee employee,int thisyear,int lastyear,DateTimeOffset updatedate)
-        {
-            employee.ThisYearBalance = employeeleave.ThisYearAfter;
-            employee.LastYearBalance = employeeleave.LastYearAfter;
-            employee.UpdateDate = updatedate;
-            context.Entry(employee).State = EntityState.Modified;
-            context.SaveChanges();
-        }
+        //public void UpdateBalanceCuti(Employee employee,int thisyear,int lastyear,DateTimeOffset updatedate)
+        //{
+        //    employee.ThisYearBalance = employeeleave.ThisYearAfter;
+        //    employee.LastYearBalance = employeeleave.LastYearAfter;
+        //    employee.UpdateDate = updatedate;
+        //    context.Entry(employee).State = EntityState.Modified;
+        //    context.SaveChanges();
+        //}
 
         public int[] thislastyear()
         {
